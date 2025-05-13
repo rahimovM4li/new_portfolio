@@ -1,1 +1,220 @@
-<p>about works!</p>
+<div
+  class="w-screen h-full overflow-y-scroll bg-gray-200">
+
+  <div
+    class="xl:w-[70%] lg:w-[80%] md:w-[90%] mx-auto relative md:px-0 px-4 md:my-10 bg-[#222222] rounded-xl overflow-hidden">
+<div class="w-full h-full flex flex-col items-center">
+  <!-- Hero Section -->
+  <section class="w-full relative flex items-center flex-col lg:flex-row" id="about">
+    <img class="lg:w-1/2 " src="https://techakim.com/sam/tg/7268/li/imgs/p-2.png" alt="port image">
+    <!--  -->
+    <div
+      class="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-[#222222]">
+      <p class="text-gray-400 text-sm mb-1">FullStack Developer</p>
+      <h2 class="text-white md:text-5xl text-2xl font-bold mb-4">Muhammadali Rahimov</h2>
+      <p class="text-gray-400 text-md mb-6">
+        I am a dedicated and innovative FullStack Developer passionate about creating impactful
+        digital experiences. With a keen eye for detail and a commitment to excellence, I specialize in designing
+        and developing solutions that combine creativity with functionality.
+      </p>
+      <!-- My expertise lies in Vue, Nuxt, Svelt, Laravel and Nestjs and I thrive on transforming complex challenges into user-friendly solutions. -->
+      <div>
+        <button class="md:px-6 px-4 py-2 text-white font-semibold  outline outline-green-400 rounded-full hover:bg-green-500 transform transition delay-300">Download CV</button>
+        <span class="text-red-400 m-4">not available</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- What I DO -->
+  <section class="md:pt-20 pt-10 md:px-20 px-2" id="what-i-do">
+    <!-- Heading -->
+    <div class="w-fit">
+      <h2 class="text-2xl font-bold text-white pb-2">What I Do</h2>
+      <div class="rounded-t-full border-[1px] border-gray-500 overflow-hidden">
+        <hr class="border-[3px] border-green-400 w-[20%]" />
+      </div>
+    </div>
+
+    <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-4 mt-8">
+      <!-- 1 -->
+      <div class="flex sm:gap-4 gap-1">
+            <span class="">
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="code-slash-outline"></ion-icon>
+              </span>
+
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">Web Development</h3>
+          <p class="text-gray-400">
+            Crafting responsive and intuitive websites tailored to your unique needs using cutting-edge
+            technologies.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 -->
+      <div class="flex sm:gap-4 gap-2">
+            <span>
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="browsers-outline"></ion-icon>
+            </span>
+
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">UI/UX Design</h3>
+          <p class="text-gray-400">Creating visually appealing and user-centric designs that enhance user
+            experiences and engagement.</p>
+        </div>
+      </div>
+
+      <!-- 3 -->
+      <div class="flex sm:gap-4 gap-2">
+            <span>
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="archive-outline"></ion-icon>
+            </span>
+
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">Custom CMS Solutions</h3>
+          <p class="text-gray-400">Building reusable and efficient CMS APIs to simplify website management and
+            scalability.</p>
+        </div>
+      </div>
+      <!-- 4 -->
+      <div class="flex sm:gap-4 gap-2">
+            <span>
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="phone-portrait-outline"></ion-icon>
+            </span>
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">Mobile App Dev't</h3>
+          <p class="text-gray-400">Designing and developing user-friendly mobile applications for iOS and Android,
+            ensuring seamless performance and user satisfaction.</p>
+        </div>
+      </div>
+      <!-- 5 -->
+      <div class="flex sm:gap-4 gap-2">
+            <span>
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="bag-check-outline"></ion-icon>
+            </span>
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">E-commerce Development</h3>
+          <p class="text-gray-400">Creating robust platforms to elevate your online business presence.</p>
+        </div>
+      </div>
+      <!-- 6 -->
+      <div class="flex sm:gap-4 gap-2">
+            <span>
+              <ion-icon class="sm:text-5xl text-3xl text-green-400" name="swap-horizontal-outline"></ion-icon>
+            </span>
+        <div class="flex flex-col gap-2">
+          <h3 class="text-xl font-semibold text-white">API Integration</h3>
+          <p class="text-gray-400">Seamlessly connecting systems to enhance functionality and performance.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="sm:mt-20 mt-10 md:px-20 px-6" id="skills">
+    <!-- Heading -->
+    <div class="w-fit sm:mb-20 mb-10 ">
+      <h2 class="text-2xl font-bold text-white pb-2">Skills</h2>
+      <div class="rounded-t-full border border-gray-500 overflow-hidden">
+        <hr class="border-[3px] border-green-400 w-[40%]" />
+      </div>
+    </div>
+
+    <!-- Skills List -->
+    <div class="space-y-6">
+      <!-- Skill Item -->
+      <div *ngFor="let skill of skills" class="w-full">
+        <div class="flex justify-between items-center text-sm sm:text-base">
+          <span class="font-semibold text-gray-400 dark:text-[#A6A6A6]">{{ skill.name }}</span>
+          <span class="font-semibold text-gray-400 dark:text-[#A6A6A6] pr-2">{{ skill.percent }}%</span>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="relative h-2 bg-gray-700 rounded-full mt-2">
+          <div
+            class="absolute top-0 left-0 h-full rounded-full transition-all duration-700"
+            [ngStyle]="{
+            width: skill.percent + '%',
+            backgroundColor: skill.color
+          }">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clientts -->
+  <section class="w-full sm:pt-20 pt-10 md:px-20 px-6" id="clients">
+    <!-- Heading -->
+    <div class="w-fit sm:mb-20 mb-10">
+      <h2 class="text-2xl font-bold text-white pb-2">Clients</h2>
+      <div class="rounded-t-full border-[1px] border-gray-500 overflow-hidden">
+        <hr class="border-[3px] border-green-400 w-[60%]" />
+      </div>
+    </div>
+
+    <div class="w-full flex md:flex-nowrap flex-wrap gap-4 items-center justify-center">
+      <img class="lg:w-[15rem] w-[10rem] rounded-lg object-cover" src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw5fHxmYWNlYm9vayUyMGxvZ298ZW58MHwwfHx8MTczNTI5MTQzMXww&ixlib=rb-4.0.3&q=80&w=1080" alt="clients" />
+      <img class="lg:w-[15rem] w-[10rem] rounded-lg object-cover" src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw5fHxmYWNlYm9vayUyMGxvZ298ZW58MHwwfHx8MTczNTI5MTQzMXww&ixlib=rb-4.0.3&q=80&w=1080" alt="clients" />
+      <img class="lg:w-[15rem] w-[10rem] rounded-lg object-cover" src="https://images.unsplash.com/photo-1611944212129-29977ae1398c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw5fHxmYWNlYm9vayUyMGxvZ298ZW58MHwwfHx8MTczNTI5MTQzMXww&ixlib=rb-4.0.3&q=80&w=1080" alt="clients" />
+    </div>
+  </section>
+
+  <!-- Fun Facts -->
+  <section class="w-full sm:py-20 py-10 md:px-20 px-6" id="fun-facts">
+    <!-- Heading -->
+    <div class="w-fit sm:mb-20 mb-10">
+      <h2 class="text-2xl font-bold text-white pb-2">Fun Facts</h2>
+      <div class="rounded-t-full border-[1px] border-gray-500 overflow-hidden">
+        <hr class="border-[3px] border-green-400 w-[80%]" />
+      </div>
+    </div>
+
+    <div class="w-full grid gap-2 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1">
+      <!-- 1 -->
+      <div
+        class="flex flex-col gap-4 items-center justify-center border border-2 border-gray-400 p-6 rounded-lg text-gray-400">
+        <span class="text-4xl">😁</span>
+        <h3 class="sm:text-xl text-md font-bold text-gray-200">Happy Clients</h3>
+        <span class="sm:text-5xl text-3xl font-semibold">400<sup>+</sup></span>
+      </div>
+      <!-- 2 -->
+      <div
+        class="flex flex-col gap-4 items-center justify-center border border-2 border-gray-400 p-6 rounded-lg text-gray-400">
+        <span class="text-4xl">😬</span>
+        <h3 class="sm:text-xl text-md font-bold text-gray-200">Working Hours</h3>
+        <span class="sm:text-5xl text-3xl font-semibold">7,845<sup>+</sup></span>
+      </div>
+      <!-- 3 -->
+      <div
+        class="flex flex-col gap-4 items-center justify-center border border-2 border-gray-400 p-6 rounded-lg text-gray-400">
+        <span class="text-4xl">👋</span>
+        <h3 class="sm:text-xl text-md font-bold text-gray-200">Certification</h3>
+        <span class="sm:text-5xl text-3xl font-semibold">77<sup>+</sup></span>
+      </div>
+      <!-- 4 -->
+      <div
+        class="flex flex-col gap-4 items-center justify-center border border-2 border-gray-400 p-6 rounded-lg text-gray-400">
+        <span class="text-4xl">😲</span>
+        <h3 class="sm:text-xl text-md  font-bold text-gray-200">Portfolios</h3>
+        <span class="sm:text-5xl text-3xl font-semibold">65<sup>+</sup></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="w-full mt-10 border-t-2 pt-4 pb-8 border-gray-500">
+    <div class="flex sm:flex-row flex-col sm:justify-between items-center md:px-20 px-4">
+      <div class="flex gap-4 items-center sm:text-xl text-sm text-gray-500">
+        <a href="" class="hover:text-green-400">facebook</a>
+        <a href="" class="hover:text-green-400">instagram</a>
+        <a href="" class="hover:text-green-400">Linkedin</a>
+      </div>
+      <div class="text-lg text-gray-400">&copy;2024 Samuel Abera</div>
+    </div>
+  </footer>
+
+</div>
+  </div>
+</div>
