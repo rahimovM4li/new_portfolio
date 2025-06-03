@@ -1,0 +1,58 @@
+{
+  "NAV": {
+    "HOME": "Startseite",
+    "ABOUT": "Über mich",
+    "PROJECTS": "Projekte",
+    "CONTACT": "Kontakt"
+  },
+  "BUTTON": {
+    "HIRE_ME": "Mich engagieren"
+  },
+  "HOME": {
+    "greeting": "Hallo, ich bin",
+    "name": "Muhammadali Rahimov!",
+    "description": "Erfahrener Full-Stack-Entwickler mit über 1 Jahr Erfahrung in Angular, REST-API, Three.js und Java Spring Boot.",
+    "hireMe": "Stellen Sie mich ein",
+    "latestProjects": "Neueste Projekte",
+    "experience": {
+      "yearsLabel": "Jahre Erfahrung",
+      "projectsLabel": "Abgeschlossene Projekte",
+      "deliveryLabel": "Schnellere Projektabwicklung"
+    },
+    "skills": {
+      "web": "Full-Stack-Webentwicklung",
+      "ai": "KI & Prompt Engineering",
+      "mobile": "Mobile Web-App-Entwicklung"
+    }
+  },
+  "ABOUT": {
+    "typewriterTexts": [
+      "Ich bin ein engagierter und innovativer FullStack-Entwickler mit einer Leidenschaft für wirkungsvolle digitale Erlebnisse. Mit einem scharfen Blick für Details und dem Streben nach Exzellenz spezialisiere ich mich auf die Gestaltung und Entwicklung von Lösungen, die Kreativität mit Funktionalität vereinen."
+    ],
+    "funFacts": [
+      { "title": "Erst mal Kaffee", "text": "99 % meiner Bugs verschwinden nach der ersten Tasse ☕." },
+      { "title": "Bug-Flüsterer", "text": "Ich finde keine Bugs – sie finden mich. Und wir schließen Frieden." },
+      { "title": "Code + Beats", "text": "Wenn Lofi oder russischer Rap läuft, bin ich wahrscheinlich am Coden." },
+      { "title": "Noch am Lernen", "text": "Ich bin noch kein Profi – aber gefährlich nah dran 😎." }
+    ],
+    "whatIDoItems": [
+      { "icon" : "code-slash-outline",     "title": "Webentwicklung", "text": "Ich entwickle responsive und intuitive Webseiten, die auf deine Bedürfnisse zugeschnitten sind – mit modernsten Technologien." },
+      { "icon" : "browsers-outline",       "title": "UI/UX Design", "text": "Ich gestalte visuell ansprechende und benutzerzentrierte Designs zur Verbesserung der Nutzererfahrung." },
+      { "icon" : "archive-outline",        "title": "Individuelle CMS-Lösungen", "text": "Ich entwickle wiederverwendbare und effiziente CMS-APIs zur Vereinfachung der Website-Verwaltung und Skalierbarkeit." },
+      { "icon" : "phone-portrait-outline", "title": "Mobile App-Entwicklung", "text": "Ich entwickle benutzerfreundliche mobile Apps für iOS und Android – mit flüssiger Performance und zufriedenen Nutzern." },
+      { "icon" : "bag-check-outline",      "title": "E-Commerce Entwicklung", "text": "Ich erschaffe robuste Plattformen, um deine Online-Präsenz zu stärken." },
+      { "icon" : "swap-horizontal-outline","title": "API-Integration", "text": "Ich verbinde Systeme nahtlos, um Funktionalität und Leistung zu steigern." }
+    ]
+  },
+  "PROJECTS": {
+    "title": "Meine Projekte",
+    "subtitle": "Entdecke meine neuesten Projekte und Erfolgsgeschichten",
+    "filter-all": "Alle",
+    "filter-WedDesign": "Webdesign",
+    "filter-WedDev": "Web Entwicklung",
+    "filter-Ecomm": "E-Commerce",
+    "filter-Branding": "Markenbildung",
+    "viewProject": "Projekt ansehen",
+    "releasePlanned": "kommt bald.."
+  }
+}

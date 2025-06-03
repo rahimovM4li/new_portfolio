@@ -1,0 +1,11 @@
+.blinking-cursor {
+  animation: blink 1s steps(2, start) infinite;
+  color: #22c55e;
+  font-weight: bold;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
