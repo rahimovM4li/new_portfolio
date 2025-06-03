@@ -17,26 +17,59 @@
   <ul
     class="hidden text-lg md:flex w-1/2 items-center justify-between gap-4 py-2 cursor-pointer md:px-10 border-r-2 border-l-2 border-gray-800 dark:border-gray-300">
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="home">Home</a>
+      <a routerLink="home">{{ 'NAV.HOME' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="about">About</a>
+      <a routerLink="about">{{ 'NAV.ABOUT' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="projects">Projects</a>
+      <a routerLink="projects">{{ 'NAV.PROJECTS' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="contact">Contact</a>
+      <a routerLink="contact">{{ 'NAV.CONTACT' | translate }}</a>
     </li>
   </ul>
 
+  <div class="relative group ml-2">
+    <button
+      class="bg-green-600 text-white px-4 py-2 rounded-md relative overflow-hidden group-hover:shadow-lg group-hover:shadow-green-400 transition duration-300"
+      (click)="toggleLanguageDropdown()"
+    >
+      🌐 {{ currentLang.toUpperCase() }}
+    </button>
+
+    <!-- DROPDOWN -->
+    <div
+      *ngIf="showLangDropdown"
+      class="absolute right-0 mt-2 w-32 bg-white dark:bg-white rounded shadow-lg border border-green-400 z-50"
+    >
+      <button
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        (click)="switchLang('de')"
+      >
+        🇩🇪 Deutsch
+      </button>
+      <button
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        (click)="switchLang('en')"
+      >
+        🇬🇧 English
+      </button>
+      <button
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        (click)="switchLang('ru')"
+      >
+        🇷🇺 Русский
+      </button>
+    </div>
+  </div>
   <div class="hidden md:flex justify-start pl-4 pr-2 py-1">
     <a href="mailto:samuelabera87@gmail.com"
        class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group">
                 <span
                   class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
                 ></span>
-      <span class="relative z-10 font-bold text-gray-800">Hire Me</span>
+      <span class="relative z-10 font-bold text-gray-800">{{ 'BUTTON.HIRE_ME' | translate }}</span>
     </a>
   </div>
 
@@ -52,16 +85,16 @@
   <ul id="mobile-nav"
       class="hidden md:hidden sm:w-full w-[98%] mx-auto absolute top-[4rem] left-0 right-0 w-full flex-col items-center gap-4 bg-black dark:bg-white rounded-b cursor-pointer shadow shadow-green-600">
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="home"  (click)="closeNav()">Home</a>
+      <a routerLink="home"  (click)="closeNav()">{{ 'NAV.HOME' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="about" (click)="closeNav()">About</a>
+      <a routerLink="about" (click)="closeNav()">{{ 'NAV.ABOUT' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="projects" (click)="closeNav()">Projects</a>
+      <a routerLink="projects" (click)="closeNav()">{{ 'NAV.PROJECTS' | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="contact" (click)="closeNav()">Contact</a>
+      <a routerLink="contact" (click)="closeNav()">{{ 'NAV.CONTACT' | translate }}</a>
     </li>
     <li class="p-2 rounded hover:shadow hover:shadow-green-600">
       <button class="flex justify-start">
@@ -70,7 +103,7 @@
                 <span
                   class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
                 ></span>
-          <span class="relative z-10 font-bold text-gray-800">Hire Me</span>
+          <span class="relative z-10 font-bold text-gray-800">{{ 'BUTTON.HIRE_ME' | translate }}</span>
         </a>
       </button>
     </li>

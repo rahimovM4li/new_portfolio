@@ -1,0 +1,58 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "BUTTON": {
+    "HIRE_ME": "Hire Me"
+  },
+  "HOME": {
+    "greeting": "Hi there, I am",
+    "name": "Muhammadali Rahimov!",
+    "description": "Experienced full-stack developer with 1+ years of expertise in Angular, Rest API, Three.js and Java Spring Boot.",
+    "hireMe": "Hire Me",
+    "latestProjects": "Latest Projects",
+    "experience": {
+      "yearsLabel": "Years Experience",
+      "projectsLabel": "Projects Completed",
+      "deliveryLabel": "Faster Project Delivery"
+    },
+    "skills": {
+      "web": "Full-Stack Web Dev't",
+      "ai": "AI & Prompt Engineering",
+      "mobile": "Mobile Web-App Dev't"
+    }
+  },
+  "ABOUT": {
+    "typewriterTexts": [
+      "I am a dedicated and innovative FullStack Developer passionate about creating impactful digital experiences. With a keen eye for detail and a commitment to excellence, I specialize in designing and developing solutions that combine creativity with functionality."
+    ],
+    "funFacts": [
+      { "title": "Coffee First", "text": "99% of my bugs disappear after the first cup ☕." },
+      { "title": "Bug Whisperer", "text": "I don’t find bugs. They find me. And we make peace." },
+      { "title": "Code + Beats", "text": "If you hear Lofi or Russian rap, I’m probably coding." },
+      { "title": "Still Learning", "text": "I'm not a pro yet — but I’m getting dangerously close 😎." }
+    ],
+    "whatIDoItems": [
+      { "icon" : "code-slash-outline",      "title": "Web Development", "text": "Crafting responsive and intuitive websites tailored to your unique needs using cutting-edge technologies." },
+      { "icon" : "browsers-outline",       "title": "UI/UX Design", "text": "Creating visually appealing and user-centric designs that enhance user experiences and engagement." },
+      { "icon" : "archive-outline",         "title": "Custom CMS Solutions", "text": "Building reusable and efficient CMS APIs to simplify website management and scalability." },
+      { "icon" : "phone-portrait-outline",     "title": "Mobile App Dev't", "text": "Designing and developing user-friendly mobile applications for iOS and Android, ensuring seamless performance and user satisfaction." },
+      { "icon" : "bag-check-outline",         "title": "E-commerce Development", "text": "Creating robust platforms to elevate your online business presence." },
+      { "icon" : "swap-horizontal-outline",   "title": "API Integration", "text": "Seamlessly connecting systems to enhance functionality and performance." }
+    ]
+  },
+  "PROJECTS": {
+    "title": "My Projects",
+    "subtitle": "Discover my latest projects and success stories",
+    "filter-all": "All",
+    "filter-WedDesign": "Web Design",
+    "filter-WedDev": "Web Development",
+    "filter-Ecomm": "E-Commerce",
+    "filter-Branding": "Branding",
+    "viewProject": "View Project",
+    "releasePlanned": "coming soon.."
+  }
+}
