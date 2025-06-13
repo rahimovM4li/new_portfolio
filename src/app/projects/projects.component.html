@@ -1,36 +1,84 @@
-<section id="portfolio" class="portfolio-section py-16 px-4">
+<section
+  id="portfolio"
+  class="portfolio-section py-16 px-4 bg-gradient-to-t from-black to-green-950"
+>
   <div class="container mx-auto">
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4">{{ "PROJECTS.title" | translate }}</h2>
-      <p class="text-lg text-indigo-500 font-semibold">{{ "PROJECTS.subtitle" | translate }}</p>
+      <h2 class="text-4xl font-bold mb-4 text-indigo-300">
+        {{ "PROJECTS.title" | translate }}
+      </h2>
+      <p class="text-lg text-indigo-200 font-semibold">
+        {{ "PROJECTS.subtitle" | translate }}
+      </p>
     </div>
     <div class="flex flex-col md:flex-row items-center mb-8">
-      <button (click)="filterProjects('All')" class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">{{ "PROJECTS.filter-all" | translate }}</button>
-      <button (click)="filterProjects('Web Design')" class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">{{ "PROJECTS.filter-WedDesign" | translate }}</button>
-      <button (click)="filterProjects('E-Commerce')" class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">{{ "PROJECTS.filter-Ecomm" | translate }}</button>
-      <button (click)="filterProjects('Branding')" class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded">{{ "PROJECTS.filter-Branding" | translate }}</button>
+      <button
+        (click)="filterProjects('All')"
+        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded"
+      >
+        {{ "PROJECTS.filter-all" | translate }}
+      </button>
+      <button
+        (click)="filterProjects('Web Design')"
+        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded"
+      >
+        {{ "PROJECTS.filter-WedDesign" | translate }}
+      </button>
+      <button
+        (click)="filterProjects('E-Commerce')"
+        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded"
+      >
+        {{ "PROJECTS.filter-Ecomm" | translate }}
+      </button>
+      <button
+        (click)="filterProjects('Branding')"
+        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded"
+      >
+        {{ "PROJECTS.filter-Branding" | translate }}
+      </button>
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
       <div
         #projects
-           *ngFor="let project of filteredProjects; let i = index;"
-           class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden  transition duration-1000"
-           [ngClass]="{
-        'opacity-0': true,
-        'translate-x-[-50px]': i % 2 === 0,
-        'translate-x-[50px]': i % 2 !== 0}">
+        *ngFor="let project of filteredProjects; let i = index"
+        class="group portfolio-item relative hover:shadow-lg shadow-md rounded-lg overflow-hidden transition duration-1000"
+        [ngClass]="{
+          'opacity-0': true,
+          'translate-x-[-50px]': i % 2 === 0,
+          'translate-x-[50px]': i % 2 !== 0
+        }"
+      >
         <a [href]="project.link" target="_blank">
-          <img class="w-full h-90 object-cover" [src]="project.image" [alt]="project.title">
-          <div class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70"></div>
-          <div class="p-4 flex flex-col items-center justify-between relative z-10">
-            <h3 class="text-lg font-medium text-txt group-hover:text-gray-dark">{{ project.title }}</h3>
-            <span class="text-sm font-bold text-pink-500 group-hover:text-indigo-500">
-              <ng-container *ngFor="let cat of project.category; let last = last">
-                  {{ cat | translate }}<span *ngIf="!last">, </span>
+          <img
+            class="w-full h-90 object-cover"
+            [src]="project.image"
+            [alt]="project.title"
+          />
+          <div
+            class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70"
+          ></div>
+          <div
+            class="p-4 flex flex-col items-center justify-between relative z-10"
+          >
+            <h3
+              class="text-lg text-indigo-50 font-medium text-txt group-hover:text-green-500"
+            >
+              {{ project.title }}
+            </h3>
+            <span
+              class="text-sm font-bold text-pink-500 group-hover:text-indigo-500"
+            >
+              <ng-container
+                *ngFor="let cat of project.category; let last = last"
+              >
+                {{ cat | translate }}<span *ngIf="!last">, </span>
               </ng-container>
             </span>
-            <span class="text-sm font-bold text-blue-500 group-hover:text-red-500">{{ "PROJECTS.viewProject" | translate}}</span>
+            <span
+              class="text-sm font-bold text-blue-500 group-hover:text-red-500"
+              >{{ "PROJECTS.viewProject" | translate }}</span
+            >
           </div>
         </a>
       </div>

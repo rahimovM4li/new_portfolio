@@ -54,5 +54,26 @@
     "filter-Branding": "Markenbildung",
     "viewProject": "Projekt ansehen",
     "releasePlanned": "kommt bald.."
-  }
+  },
+  "Contact": {
+  "title": "Lass uns in Kontakt treten",
+  "subtitle": "Wähle deinen bevorzugten Kontaktweg",
+  "email": "E-Mail",
+  "phone": "Telefon",
+  "location": "Standort",
+  "calendly": "Calendly",
+  "calendlyLink": "Termin mit mir vereinbaren",
+  "nameQuestion": "Wie ist dein Name?",
+  "emailQuestion": "Wie lautet deine E-Mail-Adresse?",
+  "phoneQuestion": "Gib deine Telefonnummer ein",
+  "messageQuestion": "Deine Nachricht",
+  "placeholderName": "Gib deinen Namen ein",
+  "placeholderEmail": "Gib deine E-Mail ein",
+  "placeholderPhone": "Telefonnummer eingeben",
+  "placeholderMessage": "Schreibe hier deine Nachricht...",
+  "charCount": "Zeichen: ",
+  "back": "Zurück",
+  "next": "Weiter",
+  "submit": "Absenden"
+}
 }

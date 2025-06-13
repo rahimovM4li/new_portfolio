@@ -1,126 +1,162 @@
 <div
-  class="w-screen h-full overflow-y-scroll bg-gray-200">
-
+  class="w-screen h-full overflow-y-scroll bg-gradient-to-b from-black to-green-800"
+>
   <div
-    class="xl:w-[70%] lg:w-[80%] md:w-[90%] mx-auto relative md:px-0 px-4 md:my-10 bg-[#222222] rounded-xl overflow-hidden">
-<div class="w-full h-full flex flex-col items-center">
-  <!-- Hero Section -->
-  <section class="w-full relative flex items-center flex-col lg:flex-row" id="about">
-    <img class="lg:w-1/2 " src="assets/programmer.png" alt="port image">
-    <!--  -->
-    <div
-      class="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-[#222222]">
-      <p class="text-gray-400 text-sm mb-1">FullStack Developer</p>
-      <h2 class="text-white md:text-5xl text-2xl font-bold mb-4 bli">Muhammadali Rahimov</h2>
-      <p class="text-gray-400 text-md mb-6">
-        <span>{{ currentTypedText }}</span><span class="blinking-cursor">|</span>
-      </p>
-      <!-- My expertise lies in Vue, Nuxt, Svelt, Laravel and Nestjs and I thrive on transforming complex challenges into user-friendly solutions. -->
-      <div>
-        <button class="md:px-6 px-4 py-2 text-white font-semibold  outline outline-green-400 rounded-full hover:bg-green-500 transform transition delay-300">Download CV</button>
-        <span class="text-red-400 m-4">not available</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- What I DO -->
-  <section class="md:pt-20 pt-10 md:px-20 px-2" id="what-i-do">
-    <!-- Heading -->
-    <div class="w-fit">
-      <h2 class="text-2xl font-bold text-white pb-2">What I Do</h2>
-      <div class="rounded-t-full border-[1px] border-gray-500 overflow-hidden">
-        <hr class="border-[3px] border-green-400 w-[20%]" />
-      </div>
-    </div>
-
-    <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-4 mt-8">
-      <div *ngFor="let item of whatIDoItems; let i = index"
-           #doCard
-           [ngClass]="{
-        'opacity-0': true,
-        'translate-x-[-50px]': i % 2 === 0,
-        'translate-x-[50px]': i % 2 !== 0
-     }"
-           class="do-card transition duration-700 flex sm:gap-4 gap-1 items-start">
-
-  <span>
-    <ion-icon [name]="item.icon" class="sm:text-5xl text-3xl text-green-400"></ion-icon>
-  </span>
-
-        <div class="flex flex-col gap-2">
-          <h3 class="text-xl font-semibold text-white">{{ item.title }}</h3>
-          <p class="text-gray-400">{{ item.text }}</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="sm:mt-20 mt-10 md:px-20 px-6 w-full" id="skills">
-    <!-- Heading -->
-    <div class="w-fit sm:mb-20 mb-10 ">
-      <h2 class="text-2xl font-bold text-white pb-2">Skills</h2>
-      <div class="rounded-t-full border border-gray-500 overflow-hidden">
-        <hr class="border-[3px] border-green-400 w-[40%]" />
-      </div>
-    </div>
-
-    <!-- Skills List -->
-    <div class="space-y-6">
-      <!-- Skill Item -->
-      <div *ngFor="let skill of skills; let i = index" class="w-full">
-        <div class="flex justify-between items-center text-sm sm:text-base">
-          <span class="font-semibold text-gray-400 dark:text-[#A6A6A6]">{{ skill.name }}</span>
-          <span class="font-semibold text-gray-400 dark:text-[#A6A6A6] pr-2">{{ skill.percent }}%</span>
-        </div>
-
-        <!-- Progress bar -->
-        <div class="relative h-2 bg-gray-700 rounded-full mt-2 overflow-hidden">
-          <div
-            #progressBar
-            class="absolute top-0 left-0 h-full rounded-full transition-all duration-1000 ease-in-out"
-            style="width: 0%">
+    class="xl:w-[70%] lg:w-[80%] md:w-[90%] mx-auto relative md:px-0 px-4 md:my-10 bg-[#222222] rounded-xl overflow-hidden"
+  >
+    <div class="w-full h-full flex flex-col items-center">
+      <!-- Hero Section -->
+      <section
+        class="w-full relative flex items-center flex-col lg:flex-row"
+        id="about"
+      >
+        <img
+          class="lg:w-1/2 rounded-2xl"
+          src="assets/myPic.jpg"
+          alt="port image"
+        />
+        <!--  -->
+        <div
+          class="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-[#222222]"
+        >
+          <p class="text-gray-400 text-sm mb-1">FullStack Developer</p>
+          <h2 class="text-white md:text-5xl text-2xl font-bold mb-4 bli">
+            Muhammadali Rahimov
+          </h2>
+          <p class="text-gray-400 text-md mb-6">
+            <span>{{ currentTypedText }}</span
+            ><span class="blinking-cursor">|</span>
+          </p>
+          <!-- My expertise lies in Vue, Nuxt, Svelt, Laravel and Nestjs and I thrive on transforming complex challenges into user-friendly solutions. -->
+          <div>
+            <button
+              class="md:px-6 px-4 py-2 text-white font-semibold outline outline-green-400 rounded-full hover:bg-green-500 transform transition delay-300"
+            >
+              Download CV
+            </button>
+            <span class="text-red-400 m-4">not available</span>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
+      </section>
 
-  <!-- Fun Facts -->
-  <section class="w-full sm:py-20 py-10 md:px-20 px-6" id="fun-facts">
-    <!-- Heading -->
-    <div class="w-fit sm:mb-20 mb-10">
-      <h2 class="text-2xl font-bold text-white pb-2">Fun Facts</h2>
-      <div class="rounded-t-full border-[1px] border-gray-500 overflow-hidden">
-        <hr class="border-[3px] border-green-400 w-[80%]" />
-      </div>
-    </div>
+      <!-- What I DO -->
+      <section class="md:pt-20 pt-10 md:px-20 px-2" id="what-i-do">
+        <!-- Heading -->
+        <div class="w-fit">
+          <h2 class="text-2xl font-bold text-white pb-2">What I Do</h2>
+          <div
+            class="rounded-t-full border-[1px] border-gray-500 overflow-hidden"
+          >
+            <hr class="border-[3px] border-green-400 w-[20%]" />
+          </div>
+        </div>
 
-    <div class="w-full grid gap-2 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1">
-      <div
-        *ngFor="let fact of funFacts,"
-        #funCard
-        class="fun-fact-card opacity-0 transform translate-y-5 transition duration-700
-         flex flex-col gap-4 items-center justify-center border-2 border-gray-400 p-6 rounded-lg text-gray-400 hover:border-green-400">
-        <span class="text-4xl">{{ fact.icon }}</span>
-        <h3 class="sm:text-xl text-md font-bold text-gray-200">{{ fact.title }}</h3>
-        <p class="text-center text-sm text-gray-400">{{ fact.text }}</p>
-      </div>
-    </div>
-  </section>
+        <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-4 mt-8">
+          <div
+            *ngFor="let item of whatIDoItems; let i = index"
+            #doCard
+            [ngClass]="{
+              'opacity-0': true,
+              'translate-x-[-50px]': i % 2 === 0,
+              'translate-x-[50px]': i % 2 !== 0
+            }"
+            class="do-card transition duration-700 flex sm:gap-4 gap-1 items-start"
+          >
+            <span>
+              <ion-icon
+                [name]="item.icon"
+                class="sm:text-5xl text-3xl text-green-400"
+              ></ion-icon>
+            </span>
 
-  <footer class="w-full mt-10 border-t-2 pt-4 pb-8 border-gray-500">
-    <div class="flex sm:flex-row flex-col sm:justify-between items-center md:px-20 px-4">
-      <div class="flex gap-4 items-center sm:text-xl text-sm text-gray-500">
-        <a href="" class="hover:text-green-400">facebook</a>
-        <a href="" class="hover:text-green-400">instagram</a>
-        <a href="" class="hover:text-green-400">Linkedin</a>
-      </div>
-      <div class="text-lg text-gray-400">&copy;2025 Muhammadali Rahimov</div>
-    </div>
-  </footer>
+            <div class="flex flex-col gap-2">
+              <h3 class="text-xl font-semibold text-white">{{ item.title }}</h3>
+              <p class="text-gray-400">{{ item.text }}</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-</div>
+      <!-- Testimonials -->
+      <section class="sm:mt-20 mt-10 md:px-20 px-6 w-full" id="skills">
+        <!-- Heading -->
+        <div class="w-fit sm:mb-20 mb-10">
+          <h2 class="text-2xl font-bold text-white pb-2">Skills</h2>
+          <div class="rounded-t-full border border-gray-500 overflow-hidden">
+            <hr class="border-[3px] border-green-400 w-[40%]" />
+          </div>
+        </div>
+
+        <!-- Skills List -->
+        <div class="space-y-6">
+          <!-- Skill Item -->
+          <div *ngFor="let skill of skills; let i = index" class="w-full">
+            <div class="flex justify-between items-center text-sm sm:text-base">
+              <span class="font-semibold text-gray-400 dark:text-[#A6A6A6]">{{
+                skill.name
+              }}</span>
+              <span class="font-semibold text-gray-400 dark:text-[#A6A6A6] pr-2"
+                >{{ skill.percent }}%</span
+              >
+            </div>
+
+            <!-- Progress bar -->
+            <div
+              class="relative h-2 bg-gray-700 rounded-full mt-2 overflow-hidden"
+            >
+              <div
+                #progressBar
+                class="absolute top-0 left-0 h-full rounded-full transition-all duration-1000 ease-in-out"
+                style="width: 0%"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Fun Facts -->
+      <section class="w-full sm:py-20 py-10 md:px-20 px-6" id="fun-facts">
+        <!-- Heading -->
+        <div class="w-fit sm:mb-20 mb-10">
+          <h2 class="text-2xl font-bold text-white pb-2">Fun Facts</h2>
+          <div
+            class="rounded-t-full border-[1px] border-gray-500 overflow-hidden"
+          >
+            <hr class="border-[3px] border-green-400 w-[80%]" />
+          </div>
+        </div>
+
+        <div
+          class="w-full grid gap-2 lg:grid-cols-4 sm:grid-cols-2 grid-cols-1"
+        >
+          <div
+            *ngFor="let fact of funFacts"
+            #funCard
+            class="fun-fact-card opacity-0 transform translate-y-5 transition duration-700 flex flex-col gap-4 items-center justify-center border-2 border-gray-400 p-6 rounded-lg text-gray-400 hover:border-green-400"
+          >
+            <span class="text-4xl">{{ fact.icon }}</span>
+            <h3 class="sm:text-xl text-md font-bold text-gray-200">
+              {{ fact.title }}
+            </h3>
+            <p class="text-center text-sm text-gray-400">{{ fact.text }}</p>
+          </div>
+        </div>
+      </section>
+
+      <footer class="w-full mt-10 border-t-2 pt-4 pb-8 border-gray-500">
+        <div
+          class="flex sm:flex-row flex-col sm:justify-between items-center md:px-20 px-4"
+        >
+          <div class="flex gap-4 items-center sm:text-xl text-sm text-gray-500">
+            <a href="" class="hover:text-green-400">facebook</a>
+            <a href="" class="hover:text-green-400">instagram</a>
+            <a href="" class="hover:text-green-400">Linkedin</a>
+          </div>
+          <div class="text-lg text-gray-400">
+            &copy;2025 Muhammadali Rahimov
+          </div>
+        </div>
+      </footer>
+    </div>
   </div>
 </div>

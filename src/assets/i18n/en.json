@@ -54,5 +54,26 @@
     "filter-Branding": "Branding",
     "viewProject": "View Project",
     "releasePlanned": "coming soon.."
+  },
+  "Contact": {
+  "title": "Let's Connect",
+  "subtitle": "Choose your preferred way to reach out",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "calendly": "Calendly",
+    "calendlyLink": "Schedule a meeting with Me",
+    "nameQuestion": "What's your name?",
+    "emailQuestion": "What's your email?",
+    "phoneQuestion": "Enter your phone number",
+    "messageQuestion": "Your message",
+    "placeholderName": "Enter your name",
+    "placeholderEmail": "Enter your email",
+    "placeholderPhone": "Enter Phone Number",
+    "placeholderMessage": "Type your message here...",
+    "charCount": "Characters: ",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit"
   }
 }

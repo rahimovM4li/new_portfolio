@@ -54,5 +54,27 @@
     "filter-Branding": "Брендинг",
     "viewProject": "Посмотреть проект",
     "releasePlanned": "скоро будет.."
-  }
+  },
+"Contact": {
+  "title": "Давайте свяжемся",
+  "subtitle": "Выберите удобный способ связи",
+  "email": "Эл. почта",
+  "phone": "Телефон",
+  "location": "Местоположение",
+  "calendly": "Calendly",
+  "calendlyLink": "Запланировать встречу со мной",
+  "nameQuestion": "Как вас зовут?",
+  "emailQuestion": "Ваш email?",
+  "phoneQuestion": "Введите номер телефона",
+  "messageQuestion": "Ваше сообщение",
+  "placeholderName": "Введите ваше имя",
+  "placeholderEmail": "Введите ваш email",
+  "placeholderPhone": "Введите номер телефона",
+  "placeholderMessage": "Напишите ваше сообщение здесь...",
+  "charCount": "Символов: ",
+  "back": "Назад",
+  "next": "Далее",
+  "submit": "Отправить"
+}
+
 }

@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {NgClass, NgForOf, NgIf} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import {TranslatePipe} from '@ngx-translate/core';
+
 
 @Component({
   selector: 'app-contact',
@@ -10,13 +12,15 @@ import {FormsModule} from '@angular/forms';
     NgClass,
     FormsModule,
     NgIf,
-    NgForOf
+    NgForOf,
+    TranslatePipe
   ],
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
   currentStep = 1;
   steps = [1, 2, 3, 4];
+  showFullForm = false;
 
 
   formData = {
@@ -74,6 +78,10 @@ export class ContactComponent {
         console.error('Fehler:', error);
         alert('Fehler beim Senden.');
       });
+  }
+
+   expandForm() {
+    this.showFullForm = true;
   }
 
 

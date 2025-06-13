@@ -1,32 +1,67 @@
 <nav
-  class="w-full sm:w-10/12 lg:w-8/12 mx-auto relative z-10 flex items-center justify-between dark:bg-white bg-black/80 md:mt-10 py-4 text-white dark:text-black border-b border-green-600/20 dark:border-green-600/20 shadow-lg shadow-green-400/20">
+  class="w-full sm:w-10/12 lg:w-8/12 mx-auto relative z-10 flex items-center justify-between dark:bg-white bg-black/80 md:mt-10 py-4 text-white dark:text-black border-b border-green-600/20 dark:border-green-600/20 shadow-lg shadow-green-400/20"
+>
   <!-- <div class="">
       <h4 class="text-4xl font-serif text-white dark:text-black px-4 py-1">Samuel</h4>
   </div> -->
   <div class="flex-shrink-0 px-4">
     <a href="#" class="text-xl font-bold text-gray-700">
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_1.9s_linear_infinite]">R</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2s_linear_infinite]">A</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2.1s_linear_infinite]">H</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2.2s_linear_infinite]">I</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2.3s_linear_infinite]">M</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2.4s_linear_infinite]">O</span>
-      <span class="px-1 bg-green-400 rounded-full animate-[ping_2.5s_linear_infinite]">V</span>
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_1.9s_linear_infinite]"
+        >R</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2s_linear_infinite]"
+        >A</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2.1s_linear_infinite]"
+        >H</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2.2s_linear_infinite]"
+        >I</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2.3s_linear_infinite]"
+        >M</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2.4s_linear_infinite]"
+        >O</span
+      >
+      <span
+        class="px-1 bg-green-400 rounded-full animate-[ping_2.5s_linear_infinite]"
+        >V</span
+      >
     </a>
   </div>
   <ul
-    class="hidden text-lg md:flex w-1/2 items-center justify-between gap-4 py-2 cursor-pointer md:px-10 border-r-2 border-l-2 border-gray-800 dark:border-gray-300">
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="home">{{ 'NAV.HOME' | translate }}</a>
+    class="hidden text-lg md:flex w-1/2 items-center justify-between gap-4 py-2 cursor-pointer md:px-10 border-r-2 border-l-2 border-gray-800 dark:border-gray-300"
+  >
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="home">{{ "NAV.HOME" | translate }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="about">{{ 'NAV.ABOUT' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="about">{{ "NAV.ABOUT" | translate }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="projects">{{ 'NAV.PROJECTS' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="projects">{{ "NAV.PROJECTS" | translate }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="contact">{{ 'NAV.CONTACT' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="contact">{{ "NAV.CONTACT" | translate }}</a>
     </li>
   </ul>
 
@@ -41,22 +76,22 @@
     <!-- DROPDOWN -->
     <div
       *ngIf="showLangDropdown"
-      class="absolute right-0 mt-2 w-32 bg-white dark:bg-white rounded shadow-lg border border-green-400 z-50"
+      class="absolute right-0 mt-2 w-32 bg-black rounded shadow-lg border border-green-400 z-50"
     >
       <button
-        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-black transition"
         (click)="switchLang('de')"
       >
         🇩🇪 Deutsch
       </button>
       <button
-        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-black transition"
         (click)="switchLang('en')"
       >
         🇬🇧 English
       </button>
       <button
-        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-white transition"
+        class="w-full px-4 py-2 text-left hover:bg-green-100 dark:hover:bg-green-600 hover:text-black transition"
         (click)="switchLang('ru')"
       >
         🇷🇺 Русский
@@ -64,49 +99,84 @@
     </div>
   </div>
   <div class="hidden md:flex justify-start pl-4 pr-2 py-1">
-    <a href="mailto:samuelabera87@gmail.com"
-       class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group">
-                <span
-                  class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
-                ></span>
-      <span class="relative z-10 font-bold text-gray-800">{{ 'BUTTON.HIRE_ME' | translate }}</span>
+    <a
+      href="mailto:samuelabera87@gmail.com"
+      class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group"
+    >
+      <span
+        class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
+      ></span>
+      <span class="relative z-10 font-bold text-gray-800">{{
+        "BUTTON.HIRE_ME" | translate
+      }}</span>
     </a>
   </div>
 
   <!-- TOGGLE BUTTONS -->
-  <button class="block md:hidden text-3xl pr-4" id="nav__toggle-open" (click)="openNav()">
+  <button
+    class="block md:hidden text-3xl pr-4"
+    id="nav__toggle-open"
+    (click)="openNav()"
+  >
     <i class="uil uil-bars"></i>
   </button>
-  <button class="hidden md:hidden text-3xl pr-4" id="nav__toggle-close" (click)="closeNav()">
+  <button
+    class="hidden md:hidden text-3xl pr-4"
+    id="nav__toggle-close"
+    (click)="closeNav()"
+  >
     <i class="uil uil-multiply"></i>
   </button>
 
   <!-- Mobile NAv -->
-  <ul id="mobile-nav"
-      class="hidden md:hidden sm:w-full w-[98%] mx-auto absolute top-[4rem] left-0 right-0 w-full flex-col items-center gap-4 bg-black dark:bg-white rounded-b cursor-pointer shadow shadow-green-600">
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="home"  (click)="closeNav()">{{ 'NAV.HOME' | translate }}</a>
+  <ul
+    id="mobile-nav"
+    class="hidden md:hidden sm:w-full w-[98%] mx-auto absolute top-[4rem] left-0 right-0 w-full flex-col items-center gap-4 bg-black dark:bg-white rounded-b cursor-pointer shadow shadow-green-600"
+  >
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="home" (click)="closeNav()">{{ "NAV.HOME" | translate }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="about" (click)="closeNav()">{{ 'NAV.ABOUT' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="about" (click)="closeNav()">{{
+        "NAV.ABOUT" | translate
+      }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="projects" (click)="closeNav()">{{ 'NAV.PROJECTS' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="projects" (click)="closeNav()">{{
+        "NAV.PROJECTS" | translate
+      }}</a>
     </li>
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="contact" (click)="closeNav()">{{ 'NAV.CONTACT' | translate }}</a>
+    <li
+      class="rounded-b hover:border-b-[3px] hover:border-green-600"
+      routerLinkActive="border-b-[3px] border-green-600"
+    >
+      <a routerLink="contact" (click)="closeNav()">{{
+        "NAV.CONTACT" | translate
+      }}</a>
     </li>
     <li class="p-2 rounded hover:shadow hover:shadow-green-600">
       <button class="flex justify-start">
-        <a href="mailto:rahimov.muhammadali1704@gmail.com"
-           class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group">
-                <span
-                  class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
-                ></span>
-          <span class="relative z-10 font-bold text-gray-800">{{ 'BUTTON.HIRE_ME' | translate }}</span>
+        <a
+          href="mailto:rahimov.muhammadali1704@gmail.com"
+          class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group"
+        >
+          <span
+            class="absolute top-0 left-0 w-full h-full bg-white opacity-20 transform -skew-x-12 -translate-x-full group-hover:translate-x-0 transition duration-500"
+          ></span>
+          <span class="relative z-10 font-bold text-gray-800">{{
+            "BUTTON.HIRE_ME" | translate
+          }}</span>
         </a>
       </button>
     </li>
   </ul>
-
 </nav>
