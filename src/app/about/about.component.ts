@@ -39,6 +39,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
   typewriterTexts: string[] = [];
   funFacts: any[] = [];
   whatIDoItems:any[] = [];
+  inView: boolean[] = [];
   currentTypedText: string = "";
   private twIndex: number = 0;
   private twCharIndex: number = 0;
@@ -77,6 +78,7 @@ export class AboutComponent implements AfterViewInit, OnInit {
         if (Array.isArray(items)) {
           this.whatIDoItems = items;
           this.cdRef.detectChanges();
+          console.log(items)
         }
       });
     };
@@ -115,51 +117,67 @@ export class AboutComponent implements AfterViewInit, OnInit {
     });
 
     // Fun Facts Animation beim Scrollen
-    this.cards.forEach((card) => {
-      const el = card.nativeElement;
-
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              this.renderer.addClass(el, 'animate-fadeUp');
-              this.renderer.removeClass(el, 'opacity-0');
-              this.renderer.removeClass(el, 'translate-y-5');
-            } else {
-              this.renderer.removeClass(el, 'animate-fadeUp');
-              this.renderer.addClass(el, 'opacity-0');
-              this.renderer.addClass(el, 'translate-y-5');
-            }
-          });
-        },
-        { threshold: 0.8 }
-      );
-
-      observer.observe(el);
+    this.observeFunCards(); // Initial
+    this.cards.changes.subscribe(() => {
+      this.observeFunCards(); // Auch bei Änderungen z. B. durch Sprachwechsel
     });
 
     // "Was ich mache" Karten Animation
-    this.doCards.forEach((card, i) => {
-      const el = card.nativeElement;
+    setTimeout(() => {
+      this.doCards.forEach((card, i) => {
+        const el = card.nativeElement;
+        const isEven = i % 2 === 0;
+        const translateClass = isEven ? '-translate-x-12' : 'translate-x-12';
+        const animationClass = isEven ? 'animate-fadeLeft' : 'animate-fadeRight';
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              this.renderer.removeClass(el, 'opacity-0');
-              this.renderer.removeClass(el, i % 2 === 0 ? 'translate-x-[-50px]' : 'translate-x-[50px]');
-              this.renderer.addClass(el, i % 2 === 0 ? 'animate-fadeLeft' : 'animate-fadeRight');
-            } else {
-              this.renderer.removeClass(el, 'animate-fadeLeft');
-              this.renderer.removeClass(el, 'animate-fadeRight');
-              this.renderer.addClass(el, 'opacity-0');
-              this.renderer.addClass(el, i % 2 === 0 ? 'translate-x-[-50px]' : 'translate-x-[50px]');
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-      observer.observe(el);
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                this.inView[i] = true;
+                this.renderer.removeClass(el, 'opacity-0');
+                this.renderer.removeClass(el, translateClass);
+                this.renderer.addClass(el, animationClass);
+              } else {
+                this.renderer.removeClass(el, animationClass);
+                this.renderer.addClass(el, 'opacity-0');
+                this.renderer.addClass(el, translateClass);
+              }
+            });
+          },
+          { threshold: 0.2 }
+        );
+
+        observer.observe(el);
+      });
+    });
+  }
+
+  observeFunCards() {
+    setTimeout(() => {
+      this.cards.forEach((card) => {
+        const el = card.nativeElement;
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                this.renderer.addClass(el, 'animate-fadeUp');
+                this.renderer.removeClass(el, 'opacity-0');
+                this.renderer.removeClass(el, 'translate-y-5');
+                observer.unobserve(el); // Optional: nur einmal animieren
+              } else {
+                this.renderer.removeClass(el, 'animate-fadeUp');
+                this.renderer.addClass(el, 'opacity-0');
+                this.renderer.addClass(el, 'translate-y-5');
+              }
+            });
+          },
+          { threshold: 0.8 }
+        );
+
+        observer.observe(el);
+      });
     });
   }
 
