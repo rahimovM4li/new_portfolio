@@ -1,6 +1,6 @@
 <div class="bg-gradient-to-b  to-green-900 from-black md:pt-5 pt-0">
 <nav
-  class="w-full sm:w-10/12 lg:w-8/12 mx-auto relative z-10 flex items-center justify-between bg-black md:mt-0 py-4 text-white border-b border-green-600/80 shadow-lg shadow-green-400/50"
+  class="w-full sm:w-10/12 lg:w-8/12 rounded-md mx-auto relative z-10 flex items-center justify-between bg-black md:mt-0 py-4 text-white border-b border-green-600/80 shadow-lg shadow-green-400/50 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.02] hover:border-green-400"
 >
   <div class="flex-shrink-0 px-4">
     <a href="#" class="text-xl font-bold text-gray-700">
@@ -40,8 +40,9 @@
     <li
       class="rounded-b hover:border-b-[3px] hover:border-green-600"
       routerLinkActive="border-b-[3px] border-green-600"
+      [routerLinkActiveOptions]="{ exact: true }"
     >
-      <a routerLink="home">{{ "NAV.HOME" | translate }}</a>
+      <a routerLink="/">{{ "NAV.HOME" | translate }}</a>
     </li>
     <li
       class="rounded-b hover:border-b-[3px] hover:border-green-600"
@@ -99,7 +100,7 @@
 
   <div class="hidden md:flex justify-start pl-4 pr-2 py-1">
     <a
-      href="mailto:samuelabera87@gmail.com"
+      href="mailto:rahimov.muhammadali1704@gmail.com"
       class="bg-green-600 text-white px-6 py-2 rounded-md relative overflow-hidden group"
     >
       <span
@@ -125,7 +126,7 @@
     class="hidden md:hidden sm:w-full w-[98%] mx-auto absolute top-[4rem] left-0 right-0 flex-col items-center gap-4 bg-black rounded-b cursor-pointer shadow shadow-green-600"
   >
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
-      <a routerLink="home" (click)="closeNav()">{{ "NAV.HOME" | translate }}</a>
+      <a routerLink="/" (click)="closeNav()">{{ "NAV.HOME" | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
       <a routerLink="about" (click)="closeNav()">{{ "NAV.ABOUT" | translate }}</a>

@@ -17,7 +17,7 @@
         />
         <!--  -->
         <div
-          class="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-[#222222] md:rounded-xl overflow-hidden mt-5 "
+          class="lg:absolute lg:left-[40%] md:left-[30%] lg:w-[55%] lg:p-12 sm:p-6 p-4 flex flex-col justify-center bg-[#222222] md:rounded-xl overflow-hidden mt-5  border-green-600/80 shadow-lg shadow-green-400/50 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.02] hover:border-green-400"
         >
           <p class="text-gray-400 text-sm mb-1">FullStack Developer</p>
           <h2 class="text-white md:text-5xl text-2xl font-bold mb-4 bli">
@@ -51,7 +51,7 @@
           </div>
         </div>
 
-        <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-4 mt-8">
+        <div class="w-full grid lg:grid-cols-2 grid-cols-1 gap-4 mt-8 ">
           <div
             *ngFor="let item of whatIDoItems; let i = index"
             #doCard
@@ -62,7 +62,7 @@
               'translate-x-[50px]': !inView[i] && i % 2 !== 0,
               'translate-x-0': inView[i]
             }"
-            class="do-card transition duration-700 flex sm:gap-4 gap-1 items-start"
+            class="do-card transition duration-700 flex sm:gap-4 gap-1 items-start rounded-2xl border-green-600/80 shadow-lg m-2 shadow-green-400/50 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.2] hover:border-green-400"
           >
             <span>
               <ion-icon
@@ -92,7 +92,7 @@
         <!-- Skills List -->
         <div class="space-y-6">
           <!-- Skill Item -->
-          <div *ngFor="let skill of skills; let i = index" class="w-full">
+          <div *ngFor="let skill of skills; let i = index" class="w-full transition-all duration-150 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.05] hover:border-green-400 ">
             <div class="flex justify-between items-center text-sm sm:text-base">
               <span class="font-semibold text-[#A6A6A6]">{{
                 skill.name
@@ -134,7 +134,7 @@
           <div
             *ngFor="let fact of funFacts"
             #funCard
-            class="fun-fact-card opacity-0 transform translate-y-5 transition duration-700 flex flex-col gap-4 items-center justify-center border-2 border-gray-400 p-6 rounded-lg text-gray-400 hover:border-green-400"
+            class="fun-fact-card opacity-0 transform translate-y-5 transition duration-700 flex flex-col gap-4 items-center justify-center border-2 border-gray-400 p-6 rounded-lg text-gray-400 hover:border-green-400 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.2] hover:border-green-400"
           >
             <span class="text-4xl">{{ fact.icon }}</span>
             <h3 class="sm:text-xl text-md font-bold text-gray-200">

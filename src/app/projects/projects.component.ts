@@ -51,7 +51,7 @@ export class ProjectsComponent implements AfterViewInit {
       title: 'Portfolio 2.0',
       image: 'assets/protfoliov2.png',
       category: ['PROJECTS.filter-WedDesign', 'PROJECTS.filter-WedDev'],
-      link: 'home',
+      link: 'https://m4li-portfolio.web.app/',
     },
     {
       title: 'Awesome Project 5',
