@@ -125,7 +125,7 @@
     id="mobile-nav"
     class="hidden md:hidden sm:w-full w-[98%] mx-auto absolute top-[4rem] left-0 right-0 flex-col items-center gap-4 bg-black rounded-b cursor-pointer shadow shadow-green-600"
   >
-    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">
+    <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600" [routerLinkActiveOptions]="{ exact: true }">
       <a routerLink="/" (click)="closeNav()">{{ "NAV.HOME" | translate }}</a>
     </li>
     <li class="rounded-b hover:border-b-[3px] hover:border-green-600" routerLinkActive="border-b-[3px] border-green-600">

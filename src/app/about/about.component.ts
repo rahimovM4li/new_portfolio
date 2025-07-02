@@ -184,23 +184,23 @@ export class AboutComponent implements AfterViewInit, OnInit {
   startTypewriter(): void {
     const currentWord = this.typewriterTexts[this.twIndex];
 
-    if (!this.isDeleting) {
-      this.twCharIndex++;
-      this.currentTypedText = currentWord.substring(0, this.twCharIndex);
-      if (this.twCharIndex === currentWord.length) {
-        this.isDeleting = true;
-      }
-    } else {
-      this.twCharIndex--;
-      this.currentTypedText = currentWord.substring(0, this.twCharIndex);
-      if (this.twCharIndex === 0) {
-        this.isDeleting = false;
-        this.twIndex = (this.twIndex + 1) % this.typewriterTexts.length;
+    this.twCharIndex++;
+    this.currentTypedText = currentWord.substring(0, this.twCharIndex);
+
+    // Wenn das aktuelle Wort fertig getippt ist
+    if (this.twCharIndex === currentWord.length) {
+      // Prüfen, ob es das letzte Wort war
+      if (this.twIndex >= this.typewriterTexts.length - 1) {
+        return;
+      } else {
+        this.twIndex++;
+        this.twCharIndex = 0;
+        setTimeout(() => this.startTypewriter(), 1000); // kurze Pause zwischen Wörtern
+        return;
       }
     }
 
-
-    const delay = this.isDeleting ? 50 : 33;
+    const delay = 50;
     setTimeout(() => this.startTypewriter(), delay);
   }
 
