@@ -11,11 +11,11 @@
   "HOME": {
     "greeting": "Привет, я",
     "name": "Мухаммадали Рахимов!",
-    "description": "Опытный Full-Stack разработчик с более чем годом опыта в Angular, REST API, Three.js и Java Spring Boot.",
+    "description": "Full-Stack разработчик с более чем годом опыта в Angular, REST API, Three.js и Java Spring Boot.",
     "hireMe": "Нанять меня",
     "latestProjects": "Последние проекты",
     "experience": {
-      "yearsLabel": "Лет опыта",
+      "yearsLabel": "Выпито чашек кофе",
       "projectsLabel": "Завершённых проектов",
       "deliveryLabel": "Быстрая реализация проектов"
     },

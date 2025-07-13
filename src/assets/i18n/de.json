@@ -11,11 +11,11 @@
   "HOME": {
     "greeting": "Hallo, ich bin",
     "name": "Muhammadali Rahimov!",
-    "description": "Erfahrener Full-Stack-Entwickler mit über 1 Jahr Erfahrung in Angular, REST-API, Three.js und Java Spring Boot.",
+    "description": "Full-Stack-Entwickler mit über 1 Jahr Erfahrung in Angular, REST-API, Three.js und Java Spring Boot.",
     "hireMe": "Stellen Sie mich ein",
     "latestProjects": "Neueste Projekte",
     "experience": {
-      "yearsLabel": "Jahre Erfahrung",
+      "yearsLabel": "Kaffees getrunken",
       "projectsLabel": "Abgeschlossene Projekte",
       "deliveryLabel": "Schnellere Projektabwicklung"
     },

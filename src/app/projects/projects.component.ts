@@ -57,13 +57,13 @@ export class ProjectsComponent implements AfterViewInit {
       title: 'Awesome Project 5',
       image: 'https://spacema-dev.com/elevate/assets/images/portfolio-2.png',
       category: ['PROJECTS.releasePlanned'],
-      link: '/project-5',
+      link: '/',
     },
     {
       title: 'Awesome Project 6',
       image: 'https://spacema-dev.com/elevate/assets/images/portfolio-5.png',
       category: ['PROJECTS.releasePlanned'],
-      link: '/project-6',
+      link: '/',
     }
   ];
   filteredProjects: Project[] = [...this.projects];

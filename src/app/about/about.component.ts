@@ -26,10 +26,10 @@ export class AboutComponent implements AfterViewInit, OnInit {
 
 
   skills = [
-    { name: 'KI & Prompt Engineering', percent: 75, color: '#d20000' },
+    { name: 'AI & Prompt Engineering', percent: 75, color: '#d20000' },
     { name: 'HTML | CSS | JS', percent: 66, color: '#22C55E' },
-    { name: 'REST API', percent: 60, color: '#3822c5' },
-    { name: 'Angular', percent: 55, color: '#3B82F6' },
+    { name: 'Angular', percent: 60, color: '#3822c5' },
+    { name: 'REST API', percent: 55, color: '#3B82F6' },
     { name: 'Jira', percent: 50, color: '#e76f0d' },
     { name: 'Git, Github, Fork', percent: 45, color: '#e7d10d' },
     { name: 'ThreeJS', percent: 35, color: '#8B5CF6' },
