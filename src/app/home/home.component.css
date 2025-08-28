@@ -130,3 +130,24 @@ ul li:hover:nth-child(4) a:after{
     letter-spacing: 2px;
   }
 }
+
+/* Beispielhafte Animationen, ggf. in styles.css oder Tailwind config aufnehmen */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes fade-in-up {
+  from { opacity: 0; transform: translateY(30px);}
+  to { opacity: 1; transform: translateY(0);}
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(60px);}
+  to { opacity: 1; transform: translateX(0);}
+}
+@keyframes bounce-in {
+  0% { transform: scale(0.8);}
+  60% { transform: scale(1.05);}
+  100% { transform: scale(1);}
+}
+.animate-fade-in { animation: fade-in 1s ease-in; }
+.animate-fade-in-delay { animation: fade-in 1.5s 0.5s }
