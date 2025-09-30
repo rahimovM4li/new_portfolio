@@ -30,9 +30,21 @@ export class ProjectsComponent implements AfterViewInit {
 
   projects: Project[] = [
     {
+      title: 'Landing Page for Language School',
+      image: 'https://spacema-dev.com/elevate/assets/images/portfolio-2.png',
+      category: ['PROJECTS.filter-WedDesign', 'PROJECTS.filter-WedDev', 'PROJECTS.filter-Branding'],
+      link: 'https://polyglot-tj.web.app/',
+    },
+    {
+      title: 'Pharmacy Landing Page',
+      image: 'https://spacema-dev.com/elevate/assets/images/portfolio-5.png',
+      category: ['PROJECTS.filter-WedDesign', 'PROJECTS.filter-WedDev', 'PROJECTS.filter-Branding'],
+      link: 'https://dar-dar-tj.web.app/',
+    },
+    {
       title: 'ThreeJS 3D Portfolio',
       image: 'assets/portfolio.jpeg',
-      category: ['PROJECTS.filter-WedDesign', 'PROJECTS.filter-WedDev'],
+      category: ['PROJECTS.filter-WedDesign'],
       link: 'https://rahimovm4li.github.io/about_me/',
     },
     {
@@ -52,18 +64,6 @@ export class ProjectsComponent implements AfterViewInit {
       image: 'assets/protfoliov2.png',
       category: ['PROJECTS.filter-WedDesign', 'PROJECTS.filter-WedDev'],
       link: 'https://m4li-portfolio.web.app/',
-    },
-    {
-      title: 'Awesome Project 5',
-      image: 'https://spacema-dev.com/elevate/assets/images/portfolio-2.png',
-      category: ['PROJECTS.releasePlanned'],
-      link: '/',
-    },
-    {
-      title: 'Awesome Project 6',
-      image: 'https://spacema-dev.com/elevate/assets/images/portfolio-5.png',
-      category: ['PROJECTS.releasePlanned'],
-      link: '/',
     }
   ];
   filteredProjects: Project[] = [...this.projects];
