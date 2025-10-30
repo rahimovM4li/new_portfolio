@@ -52,8 +52,10 @@
     "filter-WedDev": "Web Entwicklung",
     "filter-Ecomm": "E-Commerce",
     "filter-Branding": "Markenbildung",
-    "viewProject": "Projekt ansehen",
-    "releasePlanned": "kommt bald.."
+    "viewProject": "Details ansehen",
+    "releasePlanned": "kommt bald..",
+    "visitProject": "Projekt ansehen",
+    "close": "Schließen"
   },
   "Contact": {
   "title": "Lass uns in Kontakt treten",
