@@ -52,8 +52,10 @@
     "filter-WedDev": "Web Development",
     "filter-Ecomm": "E-Commerce",
     "filter-Branding": "Branding",
-    "viewProject": "View Project",
-    "releasePlanned": "coming soon.."
+    "viewProject": "View Details",
+    "releasePlanned": "coming soon..",
+    "visitProject": "Visit Project",
+    "close": "Close"
   },
   "Contact": {
   "title": "Let's Connect",

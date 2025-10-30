@@ -52,8 +52,10 @@
     "filter-WedDev": "Веб-разработка",
     "filter-Ecomm": "Электронная коммерция",
     "filter-Branding": "Брендинг",
-    "viewProject": "Посмотреть проект",
-    "releasePlanned": "скоро будет.."
+    "viewProject": "Посмотреть детали",
+    "releasePlanned": "скоро будет..",
+    "visitProject": "Посетить проект",
+    "close": "Закрыть"
   },
 "Contact": {
   "title": "Давайте свяжемся",
