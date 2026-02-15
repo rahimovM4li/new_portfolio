@@ -1,0 +1,36 @@
+<div class="case-dialog-card glass-strong">
+  <button class="case-close" (click)="close()" aria-label="Close dialog">
+    <i class="uil uil-multiply"></i>
+  </button>
+
+  <div class="case-media">
+    <img [src]="data.image" [alt]="data.title" />
+  </div>
+
+  <div class="case-body">
+    <h3>{{ data.title }}</h3>
+    <p class="case-summary">{{ data.readme }}</p>
+
+    <div class="case-section">
+      <h4>Key Features</h4>
+      <ul>
+        <li *ngFor="let feature of data.features">{{ feature }}</li>
+      </ul>
+    </div>
+
+    <div class="case-section">
+      <h4>Tech Stack</h4>
+      <div class="case-badges">
+        <span *ngFor="let tech of data.techStack" class="badge">{{ tech }}</span>
+      </div>
+    </div>
+
+    <div class="case-actions">
+      <button class="btn btn-primary" (click)="openLink(data.link)">Live</button>
+      <button class="btn btn-ghost" [class.is-disabled]="!data.github" (click)="openLink(data.github)">
+        GitHub
+      </button>
+      <button class="btn btn-glass" (click)="close()">Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,80 @@
+.case-dialog-card {
+  position: relative;
+  padding: 1.5rem;
+  border-radius: 26px;
+  max-width: 720px;
+  width: 100%;
+  color: #eafff5;
+}
+
+.case-close {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(42, 255, 163, 0.2);
+  background: rgba(7, 30, 23, 0.6);
+  color: #eafff5;
+}
+
+.case-media {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(42, 255, 163, 0.2);
+  margin-bottom: 1.4rem;
+}
+
+.case-media img {
+  width: 100%;
+  display: block;
+}
+
+.case-body h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.7rem;
+}
+
+.case-summary {
+  color: rgba(236, 255, 247, 0.7);
+  margin-bottom: 1.2rem;
+}
+
+.case-section {
+  margin-bottom: 1.2rem;
+}
+
+.case-section h4 {
+  margin: 0 0 0.6rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(236, 255, 247, 0.7);
+}
+
+.case-section ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  display: grid;
+  gap: 0.4rem;
+  color: rgba(236, 255, 247, 0.75);
+}
+
+.case-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.case-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.case-actions .btn {
+  flex: 1 1 140px;
+  justify-content: center;
+}

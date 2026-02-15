@@ -26,14 +26,17 @@ export class AboutComponent implements AfterViewInit, OnInit {
 
 
   skills = [
-    { name: 'AI & Prompt Engineering', percent: 75, color: '#d20000' },
-    { name: 'HTML | CSS | JS', percent: 66, color: '#22C55E' },
-    { name: 'Angular', percent: 60, color: '#3822c5' },
-    { name: 'REST API', percent: 55, color: '#3B82F6' },
-    { name: 'Jira', percent: 50, color: '#e76f0d' },
-    { name: 'Git, Github, Fork', percent: 45, color: '#e7d10d' },
+        { name: 'HTML | CSS | JS', percent: 89, color: '#22C55E' },
+    { name: 'AI & Prompt Engineering | Spec-Driven Development', percent: 80, color: '#d20000' },
+    { name: 'Angular', percent: 66, color: '#3822c5' },
+    { name: 'REST API', percent: 60, color: '#3B82F6' },
+    { name: 'React', percent: 45, color: '#0a2081' },
+    { name: 'AWS', percent: 35, color: '#9413a5' },
     { name: 'ThreeJS', percent: 35, color: '#8B5CF6' },
-    { name: 'Java | Spring Boot', percent: 35, color: '#E879F9' },
+    { name: 'Java | Spring Boot', percent: 55, color: '#E879F9' },
+    { name: 'PostgreSQL', percent: 45, color: '#073d12' },
+    { name: 'Jira', percent: 80, color: '#e76f0d' },
+    { name: 'Git, Github, Fork', percent: 45, color: '#e7d10d' },
   ];
 
   typewriterTexts: string[] = [];

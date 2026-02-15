@@ -1,275 +1,60 @@
-<section
-  id="portfolio"
-  class="portfolio-section py-16 px-4 bg-gradient-to-t from-black to-green-900"
->
-  <div class="container mx-auto">
-    <div class="text-center mb-12">
-      <h2 class="text-4xl font-bold mb-4 text-indigo-300">
-        {{ "PROJECTS.title" | translate }}
-      </h2>
-      <p class="text-lg text-indigo-200 font-semibold">
-        {{ "PROJECTS.subtitle" | translate }}
-      </p>
+<section class="projects-shell section-shell" id="portfolio">
+  <div class="projects-inner">
+    <div class="projects-header">
+      <h2 class="gradient-text">{{ "PROJECTS.title" | translate }}</h2>
+      <p>{{ "PROJECTS.subtitle" | translate }}</p>
     </div>
-    <div class="flex flex-col md:flex-row items-center mb-8">
+
+    <div class="projects-filters">
       <button
-        (click)="filterProjects('All')"
-        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded transition-all duration-300 hover:scale-105"
+        *ngFor="let filter of filters"
+        class="filter-chip"
+        [class.is-active]="activeFilter === filter.key"
+        (click)="filterProjects(filter.key)"
       >
-        {{ "PROJECTS.filter-all" | translate }}
-      </button>
-      <button
-        (click)="filterProjects('PROJECTS.filter-WedDesign')"
-        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded transition-all duration-300 hover:scale-105"
-      >
-        {{ "PROJECTS.filter-WedDesign" | translate }}
-      </button>
-      <button
-        (click)="filterProjects('PROJECTS.filter-Ecomm')"
-        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded transition-all duration-300 hover:scale-105"
-      >
-        {{ "PROJECTS.filter-Ecomm" | translate }}
-      </button>
-      <button
-        (click)="filterProjects('PROJECTS.filter-Branding')"
-        class="filter-button bg-indigo-500 hover:bg-pink-500 px-4 py-2 mr-2 mb-2 text-white rounded transition-all duration-300 hover:scale-105"
-      >
-        {{ "PROJECTS.filter-Branding" | translate }}
+        {{ filter.label | translate }}
       </button>
     </div>
 
-    <div class="flex gap-10">
-      <!-- Projects Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 flex-1">
-        <div
-          #projects
-          *ngFor="let project of filteredProjects; let i = index"
-          class="group portfolio-item-wrapper relative transition-all duration-500"
-          [ngClass]="{
-            'opacity-0': true,
-            'translate-x-[-50px]': i % 2 === 0,
-            'translate-x-[50px]': i % 2 !== 0
-          }"
-        >
-          <!-- Project Card -->
-          <div
-            class="portfolio-item border-green-600/80 shadow-lg shadow-green-400/50 hover:shadow-xl rounded-lg overflow-hidden transition-all duration-500 cursor-pointer touch-manipulation"
-            [ngClass]="{
-              'ring-4 ring-green-500': isProjectSelected(project)
-            }"
-            (click)="selectProject(project, $event)"
-            (touchend)="selectProject(project, $event)"
-          >
-            <div class="relative overflow-hidden">
-              <img
-                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                [src]="project.image"
-                [alt]="project.title"
-              />
-              <div
-                class="absolute top-0 left-0 right-0 bottom-0 bg-gradient-to-r from-indigo-500 to-pink-500 opacity-0 transition duration-300 ease-in-out group-hover:opacity-70"
-              ></div>
-            </div>
-            
-            <div class="p-4 flex flex-col items-center justify-between relative z-10">
-              <h3
-                class="text-lg text-indigo-50 font-medium group-hover:text-green-500 transition-colors duration-300"
-              >
-                {{ project.title }}
-              </h3>
-              <span
-                class="text-sm font-bold text-pink-500 group-hover:text-indigo-500 transition-colors duration-300"
-              >
-                <ng-container
-                  *ngFor="let cat of project.category; let last = last"
-                >
-                  {{ cat | translate }}<span *ngIf="!last">, </span>
-                </ng-container>
-              </span>
-              <span
-                class="text-sm font-bold text-blue-500 group-hover:text-red-500 transition-colors duration-300 mt-2"
-              >
-                {{ "PROJECTS.viewProject" | translate }}
-              </span>
-            </div>
+    <div class="projects-grid" [@listAnimation]="activeFilter">
+      <div
+        *ngFor="let project of filteredProjects; trackBy: trackByTitle"
+        class="project-card glass"
+        #projectCard
+      >
+        <div class="project-media">
+          <div class="media-frame">
+            <img [src]="project.image" [alt]="project.title" loading="lazy" decoding="async" />
           </div>
-
-          <!-- Mobile Expanded Details (below card) -->
-          <div 
-            *ngIf="isProjectSelected(project)"
-            class="mobile-details lg:hidden bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-green-500 rounded-lg shadow-2xl shadow-green-500/50 overflow-hidden mt-4 animate-expandDown"
-          >
-            <div class="p-6 space-y-6">
-              <!-- About -->
-              <div class="animate-fadeIn">
-                <h4 class="text-xl font-bold text-indigo-300 mb-2 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  About Project
-                </h4>
-                <p class="text-gray-300 text-sm leading-relaxed">
-                  {{ project.readme }}
-                </p>
-              </div>
-
-              <!-- Features -->
-              <div class="animate-fadeIn animation-delay-150">
-                <h4 class="text-xl font-bold text-pink-400 mb-2 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                  </svg>
-                  Key Features
-                </h4>
-                <ul class="space-y-2">
-                  <li 
-                    *ngFor="let feature of project.features"
-                    class="flex items-start text-gray-300 text-sm hover:text-green-400 transition-colors duration-300"
-                  >
-                    <svg class="w-4 h-4 mr-2 mt-0.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span>{{ feature }}</span>
-                  </li>
-                </ul>
-              </div>
-
-              <!-- Tech Stack -->
-              <div class="animate-fadeIn animation-delay-300">
-                <h4 class="text-xl font-bold text-purple-400 mb-2 flex items-center">
-                  <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                  </svg>
-                  Tech Stack
-                </h4>
-                <div class="flex flex-wrap gap-2">
-                  <span 
-                    *ngFor="let tech of project.techStack"
-                    class="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full text-xs font-semibold hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-default"
-                  >
-                    {{ tech }}
-                  </span>
-                </div>
-              </div>
-
-              <!-- Buttons -->
-              <div class="flex gap-3 animate-fadeIn animation-delay-450">
-                <button
-                  (click)="visitProject(project.link, $event)"
-                  class="flex-1 px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white text-xs font-bold rounded-lg hover:from-green-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/50 flex items-center justify-center group"
-                >
-                  <svg class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                  </svg>
-                  {{ "PROJECTS.visitProject" | translate }}
-                </button>
-                <button
-                  (click)="closeDetails()"
-                  class="px-6 py-3 bg-red-500 hover:bg-red-600 text-white text-xs font-bold rounded-lg transition-all duration-300 hover:scale-105 shadow-lg"
-                >
-                    {{ "PROJECTS.close" | translate }}
-                </button>
-              </div>
-            </div>
-          </div>
+          <div class="media-overlay"></div>
         </div>
-      </div>
 
-      <!-- Desktop Sidebar (right side) -->
-      <div 
-        *ngIf="selectedProject"
-        class="details-sidebar hidden lg:block w-96 bg-gradient-to-br from-gray-900 to-gray-800 border-2 border-green-500 rounded-lg shadow-2xl shadow-green-500/50 overflow-hidden animate-slideInRight sticky top-4 self-start"
-        style="max-height: calc(100vh - 2rem);"
-      >
-        <div class="relative h-full flex flex-col">
-          <!-- Close Button -->
-          <button
-            (click)="closeDetails()"
-            class="absolute z-10 w-10 h-10 bg-red-500 hover:bg-red-600 text-white rounded-lg flex items-center justify-center transition-all duration-300 hover:scale-110 shadow-lg"
-          >
-            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-          </button>
-
-          <!-- Image -->
-          <div class="relative overflow-hidden">
-            <img
-              class="w-full h-64 object-cover"
-              [src]="selectedProject.image"
-              [alt]="selectedProject.title"
-            />
-            <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-gray-900 to-transparent p-4">
-              <h3 class="text-2xl font-bold text-white">{{ selectedProject.title }}</h3>
-            </div>
+        <div class="project-body">
+          <div class="tech-badges">
+            <span *ngFor="let tech of project.techStack" class="badge">{{ tech }}</span>
           </div>
+          <div class="project-title">
+            <h3>{{ project.title }}</h3>
+            <span>
+              <ng-container *ngFor="let cat of project.category; let last = last">
+                {{ cat | translate }}<span *ngIf="!last">, </span>
+              </ng-container>
+            </span>
+          </div>
+          <p class="project-summary">{{ project.readme }}</p>
 
-          <!-- Scrollable Content -->
-          <div class="flex-1 overflow-y-auto p-6 space-y-6 custom-scrollbar">
-            <!-- About -->
-            <div class="animate-fadeIn">
-              <h4 class="text-xl font-bold text-indigo-300 mb-2 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                About Project
-              </h4>
-              <p class="text-gray-300 text-sm leading-relaxed">
-                {{ selectedProject.readme }}
-              </p>
-            </div>
-
-            <!-- Features -->
-            <div class="animate-fadeIn animation-delay-200">
-              <h4 class="text-xl font-bold text-pink-400 mb-2 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-                </svg>
-                Key Features
-              </h4>
-              <ul class="space-y-2">
-                <li 
-                  *ngFor="let feature of selectedProject.features"
-                  class="flex items-start text-gray-300 text-sm hover:text-green-400 transition-colors duration-300"
-                >
-                  <svg class="w-4 h-4 mr-2 mt-0.5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
-                  </svg>
-                  <span>{{ feature }}</span>
-                </li>
-              </ul>
-            </div>
-
-            <!-- Tech Stack -->
-            <div class="animate-fadeIn animation-delay-400">
-              <h4 class="text-xl font-bold text-purple-400 mb-2 flex items-center">
-                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
-                </svg>
-                Tech Stack
-              </h4>
-              <div class="flex flex-wrap gap-2">
-                <span 
-                  *ngFor="let tech of selectedProject.techStack"
-                  class="px-3 py-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-full text-xs font-semibold hover:scale-110 hover:shadow-lg hover:shadow-purple-500/50 transition-all duration-300 cursor-default"
-                >
-                  {{ tech }}
-                </span>
-              </div>
-            </div>
-
-            <!-- Visit Button -->
-            <div class="animate-fadeIn animation-delay-600">
-              <button
-                (click)="visitProject(selectedProject.link, $event)"
-                class="w-full px-6 py-3 bg-gradient-to-r from-green-500 to-blue-500 text-white font-bold rounded-lg hover:from-green-600 hover:to-blue-600 transform hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-green-500/50 flex items-center justify-center group"
-              >
-                <svg class="w-5 h-5 mr-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                </svg>
-                {{ "PROJECTS.visitProject" | translate }}
-              </button>
-            </div>
+          <div class="project-actions">
+            <button class="btn btn-primary" (click)="openLink(project.link, $event)">Live</button>
+            <button
+              class="btn btn-ghost"
+              [class.is-disabled]="!project.github"
+              (click)="openLink(project.github, $event)"
+            >
+              GitHub
+            </button>
+            <button class="btn btn-glass" (click)="openCaseStudy(project, $event)">
+              Case Study
+            </button>
           </div>
         </div>
       </div>
