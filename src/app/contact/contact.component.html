@@ -1,216 +1,120 @@
-<div
-  id="contact"
-  class="min-h-screen bg-gradient-to-t from-black to-green-900 text-white p-4 flex flex-col items-center pb-8"
->
-  <div class="w-full max-w-6xl mt-8">
-    <h1
-      class="text-5xl font-bold text-center bg-gradient-to-r from-blue-400 to-purple-500 text-transparent bg-clip-text mb-4"
-    >
-      {{ "Contact.title" | translate }}
-    </h1>
-    <p class="text-center text-gray-400 text-xl mb-12">
-      {{ "Contact.subtitle" | translate }}
-    </p>
+<section class="contact-shell section-shell" id="contact">
+  <div class="grid-glow"></div>
 
-    <div class="flex flex-col md:flex-row gap-8 w-full">
-      <!-- Contact Info -->
-      <div
-        *ngIf="!showFullForm"
-        class="bg-gray-800 p-8  border-green-600/80 shadow-lg shadow-green-400/50 hover:shadow-lg shadow-green-400/80 rounded-3xl shadow-xl w-full md:w-1/2  border-green-600/80 shadow-lg shadow-green-400/50 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.05] hover:border-green-400"
-      >
-        <div class="bg-gray-800 p-8 rounded-3xl shadow-xl w-full md:w-100">
-          <h2 class="text-2xl font-bold mb-8">
-            {{ "Contact.title" | translate }}
-          </h2>
+  <div class="contact-inner">
+    <div class="contact-header">
+      <h2 class="gradient-text">{{ "Contact.title" | translate }}</h2>
+      <p>{{ "Contact.subtitle" | translate }}</p>
+    </div>
 
-          <div class="space-y-8">
-            <div class="flex items-center gap-4 group md:w-1/3">
-              <div
-                class="bg-blue-900 p-4 rounded-xl transform transition-transform duration-300 group-hover:translate-y-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-blue-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div class="w-full">
-                <p class="text-gray-400 text-sm sm:text-base">
-                  {{ "Contact.email" | translate }}
-                </p>
-                <p
-                  class="break-words sm:break-normal text-l text-white text-sm sm:text-base"
-                >
-                  rahimov.muhammadali1704&#64;gmail.com
-                </p>
-              </div>
+    <div class="contact-grid">
+      <!-- Contact Info Card -->
+      <div *ngIf="!showFullForm" class="contact-info glass">
+        <h3>{{ "Contact.title" | translate }}</h3>
+
+        <div class="info-list">
+          <div class="info-item">
+            <div class="info-icon info-icon--email">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
             </div>
-
-            <div class="flex items-center gap-4 group">
-              <div
-                class="bg-green-900 p-4 rounded-xl transform transition-transform duration-300 group-hover:translate-y-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-green-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p class="text-gray-400">{{ "Contact.phone" | translate }}</p>
-                <p>+491636168323</p>
-                <p>+992944424424</p>
-              </div>
+            <div>
+              <p class="info-label">{{ "Contact.email" | translate }}</p>
+              <p class="info-value">rahimov.muhammadali1704&#64;gmail.com</p>
             </div>
+          </div>
 
-            <div class="flex items-center gap-4 group">
-              <div
-                class="bg-red-900 p-4 rounded-xl transform transition-transform duration-300 group-hover:translate-y-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-red-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                  />
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p class="text-gray-400">
-                  {{ "Contact.location" | translate }}
-                </p>
-                <p>Germany</p>
-              </div>
+          <div class="info-item">
+            <div class="info-icon info-icon--phone">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"/>
+              </svg>
             </div>
+            <div>
+              <p class="info-label">{{ "Contact.phone" | translate }}</p>
+              <p class="info-value">+992944424424</p>
+            </div>
+          </div>
 
-            <div class="flex items-center gap-4 group">
-              <div
-                class="bg-purple-900 p-4 rounded-xl transform transition-transform duration-300 group-hover:translate-y-2"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  class="h-6 w-6 text-purple-400"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <p class="text-gray-400">calendly</p>
-                <a (click)="expandForm()" class="text-blue-400 hover:underline">
-                  {{ "Contact.calendlyLink" | translate }}</a
-                >
-              </div>
+          <div class="info-item">
+            <div class="info-icon info-icon--location">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="info-label">{{ "Contact.location" | translate }}</p>
+              <p class="info-value">Germany</p>
+            </div>
+          </div>
+
+          <div class="info-item">
+            <div class="info-icon info-icon--cal">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <div>
+              <p class="info-label">Calendly</p>
+              <a (click)="expandForm()" class="info-link">{{ "Contact.calendlyLink" | translate }}</a>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Contact Form Steps -->
-      <div
-        class="bg-gray-800 p-8 rounded-3xl shadow-xl border-green-600/80 shadow-lg shadow-green-400/50 hover:shadow-lg shadow-green-400/80 w-full md:w-1/2 border-green-600/80 shadow-lg shadow-green-400/50 transition-all duration-300 ease-in-out hover:shadow-2xl hover:shadow-green-400/90 hover:scale-[1.05] hover:border-green-400"
-        [ngClass]="{
-          'w-full md:w-1/1': showFullForm,
-          'w-full md:w-1/2': !showFullForm
-        }"
-      >
+      <!-- Contact Form -->
+      <div class="contact-form glass" [ngClass]="{ 'contact-form--full': showFullForm }">
         <div *ngIf="isStepActive(1)">
-          <h2 class="text-2xl font-bold mb-6">
-            {{ "Contact.nameQuestion" | translate }}
-          </h2>
+          <h3 class="form-step-title">{{ "Contact.nameQuestion" | translate }}</h3>
           <input
             type="text"
+            class="input"
             [placeholder]="'Contact.placeholderName' | translate"
             [(ngModel)]="formData.name"
-            class="w-full p-4 bg-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
           />
         </div>
 
         <div *ngIf="isStepActive(2)">
-          <h2 class="text-2xl font-bold mb-6">
-            {{ "Contact.emailQuestion" | translate }}
-          </h2>
+          <h3 class="form-step-title">{{ "Contact.emailQuestion" | translate }}</h3>
           <input
             type="email"
+            class="input"
             [placeholder]="'Contact.placeholderEmail' | translate"
             [(ngModel)]="formData.email"
-            class="w-full p-4 bg-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
           />
         </div>
 
         <div *ngIf="isStepActive(3)">
-          <h2 class="text-2xl font-bold mb-6">
-            {{ "Contact.phoneQuestion" | translate }}
-          </h2>
+          <h3 class="form-step-title">{{ "Contact.phoneQuestion" | translate }}</h3>
           <input
             type="text"
+            class="input"
             maxlength="11"
-            [(ngModel)]="formData.phone"
             [placeholder]="'Contact.placeholderPhone' | translate"
-            class="w-full p-4 bg-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+            [(ngModel)]="formData.phone"
           />
         </div>
 
         <div *ngIf="isStepActive(4)">
-          <h2 class="text-2xl font-bold mb-6">
-            {{ "Contact.messageQuestion" | translate }}
-          </h2>
+          <h3 class="form-step-title">{{ "Contact.messageQuestion" | translate }}</h3>
           <textarea
-            [(ngModel)]="formData.message"
+            class="input textarea"
             rows="4"
             maxlength="1000"
             [placeholder]="'Contact.placeholderMessage' | translate"
-            class="w-full p-4 bg-gray-700 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"
+            [(ngModel)]="formData.message"
           ></textarea>
-          <p class="mt-2 text-sm text-gray-500">
-            {{ "Contact.charCount" | translate }} {{ charCount }}/1000
-          </p>
+          <p class="char-count">{{ "Contact.charCount" | translate }} {{ charCount }}/1000</p>
         </div>
 
         <!-- Buttons -->
-        <div class="flex justify-between mt-8">
+        <div class="form-actions">
           <button
             *ngIf="currentStep > 1"
             (click)="prevStep()"
-            class="px-6 py-3 bg-gray-700 hover:bg-gray-600 rounded-xl transition duration-300"
+            class="btn btn-ghost"
           >
             {{ "Contact.back" | translate }}
           </button>
@@ -218,7 +122,7 @@
           <button
             *ngIf="currentStep < 4"
             (click)="nextStep()"
-            class="px-6 py-3 bg-blue-600 hover:bg-blue-500 rounded-xl transition duration-300 ml-auto"
+            class="btn btn-primary form-next"
           >
             {{ "Contact.next" | translate }}
           </button>
@@ -226,179 +130,46 @@
           <button
             *ngIf="currentStep === 4"
             (click)="submitForm()"
-            class="px-6 py-3 bg-green-600 hover:bg-green-500 rounded-xl transition duration-300 flex items-center gap-2"
+            class="btn btn-primary form-next"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-              />
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
             </svg>
             {{ "Contact.submit" | translate }}
           </button>
         </div>
 
-        <!-- Indicators -->
-        <div class="flex justify-center mt-8 gap-2">
+        <!-- Step Indicators -->
+        <div class="step-indicators">
           <div
-            *ngFor="let step of steps; let i = index"
-            [ngClass]="{
-              'h-2 rounded-full transition-all duration-300': true,
-              'w-8 bg-blue-500': currentStep === step,
-              'w-2 bg-gray-600': currentStep !== step
-            }"
+            *ngFor="let step of steps"
+            class="step-dot"
+            [ngClass]="{ 'step-dot--active': currentStep === step }"
           ></div>
         </div>
       </div>
     </div>
+
+    <!-- Social Links -->
+    <div class="contact-social glass">
+      <p>Social Links</p>
+      <div class="social-links">
+        <a href="https://github.com/rahimovM4li" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/m4li.de/reels/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/muhammadali-rahimov-3ab2b436b/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/@m4li_de/shorts" target="_blank" rel="noopener" aria-label="YouTube">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+        </a>
+      </div>
+    </div>
   </div>
-  <div class="bg-transparent w-full p-4 flex flex-col items-center">
-    <p class="text-center md:text-2xl text-amber-50 text-white">Social links</p>
-    <ul class="md:flex justify-center items-center space-x-6 mt-20">
-      <li class="my-4">
-        <a
-          href="https://github.com/rahimovM4li"
-          aria-label="GITHUB"
-          target="_blank"
-          rel="noopener"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512.08 512.08"
-          width="20"
-          height="20"
-        >
-          <path
-            d="M255.942 5.361C113.905 6.046-.683 121.746.003 263.783c.531 109.928 70.871 207.365 175.043 242.473 12.8 2.368 17.44-5.568 17.44-12.384 0-6.112-.192-22.4-.352-43.712-71.2 15.52-86.24-34.464-86.24-34.464a67.906 67.906 0 00-28.384-37.6c-23.264-16 1.76-15.616 1.76-15.616a53.858 53.858 0 0139.2 26.496c14.379 26.38 47.421 36.109 73.801 21.73.233-.127.464-.255.695-.386a54.848 54.848 0 0116.256-34.368c-56.832-6.496-116.48-28.512-116.48-127.008a99.488 99.488 0 0126.24-68.96 92.802 92.802 0 012.56-68.032s21.504-6.912 70.4 26.336a242.167 242.167 0 01128.224 0c48.864-33.248 70.4-26.336 70.4-26.336a92.802 92.802 0 012.56 68.032 99.422 99.422 0 0126.016 68.96c0 98.72-59.84 120.448-116.864 126.816a61.503 61.503 0 0117.376 47.616c0 34.336-.32 62.048-.32 70.4 0 6.88 4.608 14.88 17.6 12.352 134.53-45.57 206.647-191.57 161.076-326.101C462.822 76.144 365.622 6.009 255.942 5.361z"
-            fill="#5c6bc0"
-          ></path>
-          <path
-            d="M184.262 506.705a40.434 40.434 0 01-7.072-.672C42.868 462.36-30.617 318.066 13.056 183.744S201.022-24.063 335.344 19.61s207.808 187.966 164.135 322.288c-25.09 77.168-85.313 137.851-162.288 163.527a31.359 31.359 0 01-27.712-4.96 28 28 0 01-9.888-21.76v-13.472c0-12.384.224-31.072.224-52.544a41.249 41.249 0 00-10.752-32.448c-6.697-5.765-7.453-15.867-1.688-22.564a16.001 16.001 0 0110.392-5.468c49.504-5.504 95.328-21.76 95.328-102.816a77.186 77.186 0 00-20.48-53.76 16 16 0 01-3.008-16.832 67.937 67.937 0 00.896-41.6 131.391 131.391 0 00-45.408 21.888 15.617 15.617 0 01-13.28 2.176 214.393 214.393 0 00-55.872-7.552 211.21 211.21 0 00-55.712 7.52 15.682 15.682 0 01-13.344-2.272 127.24 127.24 0 00-45.504-21.76 68.096 68.096 0 00.96 41.6 16 16 0 01-3.008 16.8 77.504 77.504 0 00-20.512 53.792c0 81.024 45.728 97.376 95.136 103.04 8.778 1.014 15.072 8.952 14.058 17.73a16.002 16.002 0 01-5.322 10.174 35.2 35.2 0 00-9.952 22.4 16 16 0 01-9.28 12.352 73.984 73.984 0 01-57.44 3.2 64 64 0 0046.688 3.808 16.224 16.224 0 0113.408 3.2c3.77 3.01 5.98 7.56 6.016 12.384l.352 41.024c.306 15.16-11.735 27.699-26.895 28.005-.444.009-.887.007-1.33-.005zm71.68-469.344c-124.1.37-224.403 101.273-224.033 225.373.282 94.478 59.632 178.689 148.513 210.723v-17.216c-34.359 5.788-68.015-13.527-80.352-46.112a49.407 49.407 0 00-18.528-25.6c-6.816-4.48-21.984-14.88-17.184-30.016 3.2-9.6 11.52-14.688 26.272-14.88a67.199 67.199 0 0150.592 33.088c7.461 15.614 25.846 22.648 41.824 16a84.051 84.051 0 012.624-8.32c-39.456-8.416-98.72-34.592-98.72-131.008a108.48 108.48 0 0122.656-68.032 107.617 107.617 0 015.536-66.048 16.001 16.001 0 019.984-9.376c6.176-2.016 29.216-5.952 73.6 22.592a243.688 243.688 0 01114.464 0c44.512-28.544 67.488-24.512 73.6-22.592a15.998 15.998 0 019.952 9.344 107.394 107.394 0 015.44 65.984 108.32 108.32 0 0122.752 68.128c0 96.416-59.296 122.496-98.816 130.848a92.123 92.123 0 015.536 32.448c0 21.568 0 40.32-.224 52.768v7.872c116.714-42.072 177.223-170.794 135.151-287.507C434.555 96.977 350.382 37.651 255.942 37.361z"
-          ></path>
-        </svg>
-        </a>
-      </li>
-      <li class="my-4">
-        <a
-          href="https://www.instagram.com/m4li.de/reels/"
-          aria-label="INSTAGRAM"
-          target="_blank"
-          rel="noopener"
-        ><svg
-          height="20"
-          viewBox="0 0 24 24"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <linearGradient
-            id="instagram_svg__a"
-            gradientTransform="matrix(0 -1.982 -1.844 0 -2.292 23.869)"
-            gradientUnits="userSpaceOnUse"
-            x1="0.947"
-            x2="11.036"
-            y1="-2.332"
-            y2="-13.176"
-          >
-            <stop offset="0" stop-color="#fd5"></stop>
-            <stop offset="0.5" stop-color="#ff543e"></stop>
-            <stop offset="1" stop-color="#c837ab"></stop>
-          </linearGradient>
-          <path
-            d="M12.004.5c-6.055 0-7.213-.158-8.727.597C1.883 1.791.882 3.104.628 4.863.55 5.4.528 5.51.523 8.258c-.02 10.161-.154 10.92.576 12.434a4.838 4.838 0 003.134 2.566c1.093.282 1.82.242 7.747.242 4.968 0 6.513.089 7.802-.244a4.811 4.811 0 003.134-2.571c.736-1.522.563-2.598.563-8.692 0-5.836.197-7.135-.575-8.709a4.567 4.567 0 00-.982-1.349C20.194.281 18.136.505 15.741.5h-3.737z"
-            fill="url(#instagram_svg__a)"
-          ></path>
-          <path
-            d="M12 17.537c-3.053 0-5.537-2.484-5.537-5.537S8.947 6.463 12 6.463 17.537 8.947 17.537 12 15.053 17.537 12 17.537zM18.359 6.514a.874.874 0 11.002-1.748.874.874 0 01-.002 1.748z"
-            fill="#fff"
-          ></path>
-          <circle cx="12" cy="12" fill="none" r="3.5"></circle>
-          <path
-            d="M4.75 24h14.5A4.756 4.756 0 0024 19.25V4.75A4.756 4.756 0 0019.25 0H4.75A4.756 4.756 0 000 4.75v14.5A4.756 4.756 0 004.75 24zM1.5 4.75A3.254 3.254 0 014.75 1.5h14.5a3.254 3.254 0 013.25 3.25v14.5a3.254 3.254 0 01-3.25 3.25H4.75a3.254 3.254 0 01-3.25-3.25z"
-          ></path>
-          <path
-            d="M12 18.13c3.38 0 6.13-2.75 6.13-6.13S15.38 5.87 12 5.87 5.87 8.62 5.87 12s2.75 6.13 6.13 6.13zm0-10.76c2.553 0 4.63 2.077 4.63 4.63s-2.077 4.63-4.63 4.63S7.37 14.553 7.37 12 9.447 7.37 12 7.37zM18.358 7.362c.986 0 1.729-.74 1.729-1.721 0-1.023-.782-1.721-1.728-1.721-.986 0-1.729.74-1.729 1.721 0 1.021.778 1.721 1.728 1.721zm.177-1.886c.316.279-.405.618-.405.166 0-.27.367-.2.405-.166z"
-          ></path>
-        </svg>
-        </a>
-      </li>
-      <li class="my-4">
-        <a
-          href="https://www.linkedin.com/in/muhammadali-rahimov-3ab2b436b/"
-          aria-label="LINKEDIN"
-          target="_blank"
-          rel="noopener"
-        ><svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
-          width="20"
-          height="20"
-        >
-          <path
-            d="M469.779 503.983H42.221c-18.891 0-34.205-15.314-34.205-34.205V42.221c0-18.891 15.314-34.205 34.205-34.205h427.557c18.891 0 34.205 15.314 34.205 34.205v427.557c0 18.891-15.314 34.205-34.204 34.205z"
-            fill="#3cafe6"
-          ></path>
-          <path
-            d="M42.221 452.676V8.017c-18.891 0-34.205 15.314-34.205 34.205v427.557c0 18.891 15.314 34.205 34.205 34.205h427.557c18.891 0 34.205-15.314 34.205-34.205H59.324c-9.446 0-17.103-7.657-17.103-17.103z"
-            fill="#1c9ad6"
-          ></path>
-          <path fill="#fff" d="M84.977 196.142h68.409v230.881H84.977z"></path>
-          <path
-            fill="#e5e5e5"
-            d="M84.977 196.142h25.653v230.881H84.977z"
-          ></path>
-          <path
-            d="M350.063 196.142c-17.102 0-58.076 2.494-76.96 42.756v-42.756h-68.409v230.881h68.409V315.858c0-25.653 21.644-42.756 42.756-42.756 23.613 0 42.756 17.102 42.756 42.756V427.023h68.409V264.551c-.001-37.781-38.837-68.409-76.961-68.409z"
-            fill="#fff"
-          ></path>
-          <g fill="#e5e5e5">
-            <path
-              d="M204.693 196.142h25.653v230.881h-25.653zM384.267 315.858c0-25.653-19.143-42.756-42.756-42.756-4.154 0-8.326.671-12.351 1.93 17.098 5.139 29.453 20.219 29.453 40.825V427.022h25.653V315.858z"
-            ></path>
-          </g>
-          <circle cx="119.182" cy="119.182" r="34.205" fill="#fff"></circle>
-          <path
-            d="M136.284 136.284c-18.891 0-34.205-15.314-34.205-34.205a34.07 34.07 0 013.03-14.072c-11.869 5.367-20.133 17.301-20.133 31.174 0 18.891 15.314 34.205 34.205 34.205 13.873 0 25.807-8.264 31.174-20.133a34.046 34.046 0 01-14.071 3.031z"
-            fill="#e5e5e5"
-          ></path>
-          <path
-            d="M503.983 92.994A8.017 8.017 0 00512 84.977V42.221C512 18.941 493.059 0 469.779 0H42.221C18.941 0 0 18.941 0 42.221v427.557C0 493.059 18.941 512 42.221 512h427.557c23.28 0 42.221-18.941 42.221-42.221V119.182c0-4.427-3.588-8.017-8.017-8.017s-8.017 3.589-8.017 8.017v350.597c0 14.44-11.747 26.188-26.188 26.188H42.221c-14.44 0-26.188-11.748-26.188-26.188V42.221c0-14.44 11.748-26.188 26.188-26.188h427.557c14.441 0 26.188 11.748 26.188 26.188v42.756a8.017 8.017 0 008.017 8.017z"
-          ></path>
-          <path
-            d="M153.386 238.898a8.017 8.017 0 008.017-8.017v-34.739a8.017 8.017 0 00-8.017-8.017H84.977a8.017 8.017 0 00-8.017 8.017v230.881a8.017 8.017 0 008.017 8.017h68.409a8.017 8.017 0 008.017-8.017V266.154a8.017 8.017 0 00-16.034 0v152.852H92.994V204.159h52.376v26.722a8.017 8.017 0 008.016 8.017zM358.614 435.04h68.409a8.017 8.017 0 008.017-8.017V264.551c0-20.236-9.586-39.579-26.99-54.465-16.319-13.955-37.454-21.96-57.987-21.96-33.891 0-55.359 11.268-68.944 25.151v-17.134a8.017 8.017 0 00-8.017-8.017h-68.409a8.017 8.017 0 00-8.017 8.017v230.881a8.017 8.017 0 008.017 8.017h68.409a8.017 8.017 0 008.017-8.017V315.858c0-21.457 18.032-34.739 34.739-34.739 20.129 0 34.739 14.61 34.739 34.739v111.165a8.017 8.017 0 008.017 8.017zm-42.756-169.954c-24.418 0-50.772 19.412-50.772 50.772v103.148H212.71V204.159h52.376v34.739c0 3.656 2.573 6.926 6.125 7.789 3.66.888 7.55-.973 9.15-4.385 11.871-25.31 35.323-38.143 69.703-38.143 32.545 0 68.944 25.828 68.944 60.392v154.455H366.63V315.858c0-28.946-21.827-50.772-50.772-50.772zM119.182 76.96c-23.281 0-42.221 18.941-42.221 42.221s18.941 42.221 42.221 42.221 42.221-18.941 42.221-42.221-18.941-42.221-42.221-42.221zm0 68.41c-14.44 0-26.188-11.748-26.188-26.188s11.748-26.188 26.188-26.188 26.188 11.748 26.188 26.188-11.749 26.188-26.188 26.188z"
-          ></path>
-        </svg>
-        </a>
-      </li>
-      <li class="my-4">
-        <a
-          href="https://www.youtube.com/@Zero2FullStack/shorts"
-          aria-label="YOUTUBE"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 576 512"
-            width="20"
-            height="20"
-            fill="red"
-          >
-            <path
-              d="M549.655 124.083c-6.281-23.65-24.764-42.231-48.213-48.53C456.902 64 288 64 288 64S119.098 64 74.558 75.553c-23.449 6.299-41.932 24.88-48.213 48.53C16 168.841 16 256 16 256s0 87.159 10.345 131.917c6.281 23.65 24.764 42.231 48.213 48.53C119.098 448 288 448 288 448s168.902 0 213.442-11.553c23.449-6.299 41.932-24.88 48.213-48.53C560 343.159 560 256 560 256s0-87.159-10.345-131.917zM232 336V176l142 80-142 80z"
-            />
-          </svg>
-        </a>
-      </li>
-    </ul>
-  </div>
-</div>
+</section>
 
 
 
