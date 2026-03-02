@@ -1,6 +1,6 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 import { NgForOf, NgIf } from '@angular/common';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -26,6 +26,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   projectsCount = 0;
   deliveryCount = 0;
   faqItems: Array<{ question: string; answer: string }> = [];
+  currentLang = 'de';
 
   private yearsTarget = 894;
   private projectsTarget = 8;
@@ -36,7 +37,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private liquidRenderer?: THREE.WebGLRenderer;
   private liquidResizeHandler?: () => void;
 
-  constructor(private translate: TranslateService) {}
+  constructor(private translate: TranslateService, private router: Router) {}
 
   ngOnInit(): void {
     this.animateCount('yearsCount', this.yearsTarget, 10);
@@ -44,6 +45,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     this.animateCount('deliveryCount', this.deliveryTarget, 1800);
     this.loadFaq();
     this.translate.onLangChange.subscribe(() => this.loadFaq());
+    
+    // Get current language from URL
+    this.currentLang = this.getLangFromUrl();
   }
 
   private loadFaq(): void {
@@ -52,6 +56,12 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
         this.faqItems = items;
       }
     });
+  }
+
+  private getLangFromUrl(): string {
+    const url = this.router.url;
+    const match = url.match(/^\/(de|en|ru)/);
+    return match ? match[1] : 'de';
   }
 
   ngAfterViewInit(): void {

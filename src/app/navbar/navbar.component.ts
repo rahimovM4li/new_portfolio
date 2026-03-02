@@ -1,5 +1,5 @@
 import { Component, ElementRef, HostListener, OnDestroy, ViewChild } from '@angular/core';
-import { RouterLink, RouterLinkActive } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { NgFor, NgIf } from '@angular/common';
 
@@ -28,13 +28,14 @@ export class NavbarComponent implements OnDestroy {
 
   private rafId: number | null = null;
 
-  constructor(private translate: TranslateService) {
+  constructor(private translate: TranslateService, private router: Router) {
     this.translate.addLangs(['en', 'de', 'ru']);
     this.translate.setDefaultLang('de');
 
-    const browserLang = this.translate.getBrowserLang();
-    this.currentLang = this.translate.currentLang || (browserLang?.match(/en|de|ru/) ? browserLang : 'de');
-    this.translate.use(browserLang?.match(/en|de|ru/) ? browserLang : 'de');
+    // Get current language from URL or default to 'de'
+    const urlLang = this.getLangFromUrl();
+    this.currentLang = urlLang;
+    this.translate.use(urlLang);
   }
 
   ngOnDestroy(): void {
@@ -59,6 +60,22 @@ export class NavbarComponent implements OnDestroy {
     this.currentLang = lang;
     this.translate.use(lang);
     this.showLangDropdown = false;
+
+    // Navigate to same page in new language
+    const currentPath = this.getCurrentPathWithoutLang();
+    this.router.navigate(['/', lang, ...currentPath]);
+  }
+
+  private getLangFromUrl(): string {
+    const url = this.router.url;
+    const match = url.match(/^\/(de|en|ru)/);
+    return match ? match[1] : 'de';
+  }
+
+  private getCurrentPathWithoutLang(): string[] {
+    const url = this.router.url;
+    const pathWithoutLang = url.replace(/^\/(de|en|ru)(\/|$)/, '').split('/').filter(s => s);
+    return pathWithoutLang;
   }
 
   toggleLanguageDropdown(): void {

@@ -1,0 +1,73 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e5]:
+    - generic [ref=e6]:
+      - link "Home" [ref=e7] [cursor=pointer]:
+        - /url: /de
+        - generic "Rahimov" [ref=e8]:
+          - generic [ref=e9]: R
+          - generic [ref=e10]: a
+          - generic [ref=e11]: h
+          - generic [ref=e12]: i
+          - generic [ref=e13]: m
+          - generic [ref=e14]: o
+          - generic [ref=e15]: v
+      - navigation [ref=e16]:
+        - link "Startseite" [ref=e17] [cursor=pointer]:
+          - /url: /de
+        - link "Über mich" [ref=e18] [cursor=pointer]:
+          - /url: /de/about
+        - link "Projekte" [ref=e19] [cursor=pointer]:
+          - /url: /de/projects
+        - link "Kontakt" [ref=e20] [cursor=pointer]:
+          - /url: /de/contact
+      - generic [ref=e21]:
+        - button "DE" [ref=e23] [cursor=pointer]: DE
+        - link "Gemeinsam starten" [ref=e25] [cursor=pointer]:
+          - /url: mailto:rahimov.muhammadali1704@gmail.com
+  - generic [ref=e27]:
+    - generic [ref=e29]:
+      - generic [ref=e30]:
+        - heading "Hallo, ich bin" [level=1] [ref=e31]
+        - heading "Muhammadali Rahimov!" [level=2] [ref=e32]
+        - paragraph [ref=e33]: Full-Stack-Entwickler aus Deutschland – spezialisiert auf Angular, React, Java Spring Boot, REST-APIs, Three.js und skalierbare Webanwendungen.
+        - generic [ref=e34]:
+          - link "Gemeinsam starten" [ref=e35] [cursor=pointer]:
+            - /url: mailto:rahimov.muhammadali1704@gmail.com
+          - link "Neueste Projekte" [ref=e36] [cursor=pointer]:
+            - /url: /de/projects
+        - generic [ref=e37]:
+          - generic [ref=e38]:
+            - heading "55+" [level=4] [ref=e39]:
+              - text: "55"
+              - superscript [ref=e40]: +
+            - paragraph [ref=e41]: Kaffees getrunken
+          - generic [ref=e42]:
+            - heading "4+" [level=4] [ref=e43]
+            - paragraph [ref=e44]: Abgeschlossene Projekte
+          - generic [ref=e45]:
+            - heading "35%" [level=4] [ref=e46]
+            - paragraph [ref=e47]: Schnellere Projektabwicklung
+      - generic [ref=e49]:
+        - img "Animiertes Portfolio GIF von Muhammadali Rahimov" [ref=e50]
+        - generic [ref=e51]: Full-Stack-Webentwicklung
+        - generic [ref=e52]: KI & Prompt Engineering
+        - generic [ref=e53]: Mobile Web-App-Entwicklung
+    - generic [ref=e55]:
+      - paragraph [ref=e56]: Social links
+      - generic [ref=e57]:
+        - link "GitHub Profil von Muhammadali Rahimov" [ref=e58] [cursor=pointer]:
+          - /url: https://github.com/rahimovM4li
+          - generic [ref=e59]: 
+        - link "Instagram Profil von Muhammadali Rahimov" [ref=e60] [cursor=pointer]:
+          - /url: https://www.instagram.com/m4li.de/reels/
+          - generic [ref=e61]: 
+        - link "LinkedIn Profil von Muhammadali Rahimov" [ref=e62] [cursor=pointer]:
+          - /url: https://www.linkedin.com/in/muhammadali-rahimov-3ab2b436b/
+          - generic [ref=e63]: 
+        - link "YouTube Profil von Muhammadali Rahimov" [ref=e64] [cursor=pointer]:
+          - /url: https://www.youtube.com/@m4li_de/shorts
+          - generic [ref=e65]: 
+```

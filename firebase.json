@@ -6,6 +6,28 @@
       "**/.*",
       "**/node_modules/**"
     ],
+    "redirects": [
+      {
+        "source": "/",
+        "destination": "/de/",
+        "type": 302
+      },
+      {
+        "source": "/about",
+        "destination": "/de/about",
+        "type": 301
+      },
+      {
+        "source": "/projects",
+        "destination": "/de/projects",
+        "type": 301
+      },
+      {
+        "source": "/contact",
+        "destination": "/de/contact",
+        "type": 301
+      }
+    ],
     "headers": [
       {
         "source": "**/*.@(js|css)",

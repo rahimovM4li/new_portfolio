@@ -1,6 +1,6 @@
 <header class="nav-shell" [class.is-scrolled]="isScrolled">
   <div class="nav-wrap">
-    <a class="brand" routerLink="/" aria-label="Home">
+    <a class="brand" [routerLink]="['/', currentLang]" aria-label="Home">
       <span class="brand-text" aria-label="Rahimov">
         <span class="letter" *ngFor="let letter of brandLetters">{{ letter }}</span>
       </span>
@@ -8,19 +8,19 @@
 
     <nav class="nav-links">
       <a
-        routerLink="/"
+        [routerLink]="['/', currentLang]"
         routerLinkActive="is-active"
         [routerLinkActiveOptions]="{ exact: true }"
         class="nav-link"
         >{{ "NAV.HOME" | translate }}</a
       >
-      <a routerLink="about" routerLinkActive="is-active" class="nav-link"
+      <a [routerLink]="['/', currentLang, 'about']" routerLinkActive="is-active" class="nav-link"
         >{{ "NAV.ABOUT" | translate }}</a
       >
-      <a routerLink="projects" routerLinkActive="is-active" class="nav-link"
+      <a [routerLink]="['/', currentLang, 'projects']" routerLinkActive="is-active" class="nav-link"
         >{{ "NAV.PROJECTS" | translate }}</a
       >
-      <a routerLink="contact" routerLinkActive="is-active" class="nav-link"
+      <a [routerLink]="['/', currentLang, 'contact']" routerLinkActive="is-active" class="nav-link"
         >{{ "NAV.CONTACT" | translate }}</a
       >
     </nav>
@@ -81,19 +81,19 @@
   aria-label="Mobile navigation"
 >
   <div class="mobile-nav-inner">
-    <a routerLink="/" (click)="closeNav()" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" class="mobile-link">
+    <a [routerLink]="['/', currentLang]" (click)="closeNav()" routerLinkActive="is-active" [routerLinkActiveOptions]="{ exact: true }" class="mobile-link">
       <span class="mobile-link-text">{{ "NAV.HOME" | translate }}</span>
     </a>
     <div class="mobile-divider"></div>
-    <a routerLink="about" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
+    <a [routerLink]="['/', currentLang, 'about']" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
       <span class="mobile-link-text">{{ "NAV.ABOUT" | translate }}</span>
     </a>
     <div class="mobile-divider"></div>
-    <a routerLink="projects" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
+    <a [routerLink]="['/', currentLang, 'projects']" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
       <span class="mobile-link-text">{{ "NAV.PROJECTS" | translate }}</span>
     </a>
     <div class="mobile-divider"></div>
-    <a routerLink="contact" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
+    <a [routerLink]="['/', currentLang, 'contact']" (click)="closeNav()" routerLinkActive="is-active" class="mobile-link">
       <span class="mobile-link-text">{{ "NAV.CONTACT" | translate }}</span>
     </a>
     <a href="mailto:rahimov.muhammadali1704@gmail.com" (click)="closeNav()" class="btn btn-primary mobile-cta">

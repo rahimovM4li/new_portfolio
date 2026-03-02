@@ -20,7 +20,7 @@
         <a href="mailto:rahimov.muhammadali1704@gmail.com" class="btn btn-primary">
           {{ "BUTTON.HIRE_ME" | translate }}
         </a>
-        <a routerLink="projects" class="btn btn-glass">
+        <a [routerLink]="['/', currentLang, 'projects']" class="btn btn-glass">
           {{ "HOME.latestProjects" | translate }}
         </a>
       </div>

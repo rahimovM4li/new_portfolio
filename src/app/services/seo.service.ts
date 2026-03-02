@@ -129,9 +129,9 @@ export class SeoService {
     this.titleService.setTitle(config.title);
     this.updateMetaTag('description', config.description);
     this.updateHtmlLang(lang);
-    this.updateCanonical(normalizedRoute);
+    this.updateCanonical(normalizedRoute, lang);
     this.updateHreflang(normalizedRoute);
-    this.updateOpenGraph(config, normalizedRoute);
+    this.updateOpenGraph(config, normalizedRoute, lang);
     this.updateTwitterCard(config);
     this.updateJsonLd(normalizedRoute, lang);
   }
@@ -144,8 +144,10 @@ export class SeoService {
     this.doc.documentElement.lang = lang;
   }
 
-  private updateCanonical(route: string): void {
-    const url = route === '/' ? this.baseUrl + '/' : `${this.baseUrl}${route}`;
+  private updateCanonical(route: string, lang: string): void {
+    const url = route === '/' 
+      ? `${this.baseUrl}/${lang}/` 
+      : `${this.baseUrl}/${lang}${route}`;
     let link = this.doc.querySelector('link[rel="canonical"]') as HTMLLinkElement;
     if (link) {
       link.href = url;
@@ -161,32 +163,86 @@ export class SeoService {
     const existingLinks = this.doc.querySelectorAll('link[hreflang]');
     existingLinks.forEach(el => el.remove());
 
-    const url = route === '/' ? this.baseUrl + '/' : `${this.baseUrl}${route}`;
-
-    [...this.supportedLangs, 'x-default'].forEach(hreflang => {
+    // Create hreflang for each language with language-specific URLs
+    this.supportedLangs.forEach(hreflang => {
       const link = this.renderer.createElement('link');
       link.setAttribute('rel', 'alternate');
       link.setAttribute('hreflang', hreflang);
-      link.setAttribute('href', url);
+      
+      if (route === '/') {
+        link.setAttribute('href', `${this.baseUrl}/${hreflang}/`);
+      } else {
+        link.setAttribute('href', `${this.baseUrl}/${hreflang}${route}`);
+      }
+      
       this.doc.head.appendChild(link);
+    });
+
+    // x-default points to German version
+    const xDefaultLink = this.renderer.createElement('link');
+    xDefaultLink.setAttribute('rel', 'alternate');
+    xDefaultLink.setAttribute('hreflang', 'x-default');
+    if (route === '/') {
+      xDefaultLink.setAttribute('href', `${this.baseUrl}/de/`);
+    } else {
+      xDefaultLink.setAttribute('href', `${this.baseUrl}/de${route}`);
+    }
+    this.doc.head.appendChild(xDefaultLink);
+  }
+
+  private updateOpenGraph(config: PageMeta, route: string, lang: string): void {
+    const url = route === '/' 
+      ? `${this.baseUrl}/${lang}/` 
+      : `${this.baseUrl}/${lang}${route}`;
+    
+    // Remove existing OG tags
+    const existingOgTags = this.doc.querySelectorAll('meta[property^="og:"]');
+    existingOgTags.forEach(tag => tag.remove());
+    
+    // Add new OG tags
+    const ogTags = [
+      { property: 'og:title', content: config.ogTitle },
+      { property: 'og:description', content: config.ogDescription },
+      { property: 'og:url', content: url },
+      { property: 'og:image', content: this.ogImage },
+      { property: 'og:image:width', content: '1200' },
+      { property: 'og:image:height', content: '630' },
+      { property: 'og:image:alt', content: 'Muhammadali Rahimov – Full-Stack Developer Portfolio' },
+      { property: 'og:type', content: 'website' },
+      { property: 'og:locale', content: lang === 'de' ? 'de_DE' : lang === 'ru' ? 'ru_RU' : 'en_US' },
+      { property: 'og:locale:alternate', content: lang === 'de' ? 'en_US' : 'de_DE' },
+      { property: 'og:locale:alternate', content: lang === 'ru' ? 'en_US' : 'ru_RU' },
+      { property: 'og:site_name', content: 'M4LI – Muhammadali Rahimov' }
+    ];
+
+    ogTags.forEach(tag => {
+      const meta = this.renderer.createElement('meta');
+      meta.setAttribute('property', tag.property);
+      meta.setAttribute('content', tag.content);
+      this.doc.head.appendChild(meta);
     });
   }
 
-  private updateOpenGraph(config: PageMeta, route: string): void {
-    const url = route === '/' ? this.baseUrl + '/' : `${this.baseUrl}${route}`;
-    this.meta.updateTag({ property: 'og:title', content: config.ogTitle });
-    this.meta.updateTag({ property: 'og:description', content: config.ogDescription });
-    this.meta.updateTag({ property: 'og:url', content: url });
-    this.meta.updateTag({ property: 'og:image', content: this.ogImage });
-    this.meta.updateTag({ property: 'og:type', content: 'website' });
-    this.meta.updateTag({ property: 'og:site_name', content: 'M4LI – Muhammadali Rahimov' });
-  }
-
   private updateTwitterCard(config: PageMeta): void {
-    this.meta.updateTag({ name: 'twitter:card', content: 'summary_large_image' });
-    this.meta.updateTag({ name: 'twitter:title', content: config.ogTitle });
-    this.meta.updateTag({ name: 'twitter:description', content: config.ogDescription });
-    this.meta.updateTag({ name: 'twitter:image', content: this.ogImage });
+    // Remove existing Twitter tags
+    const existingTwitterTags = this.doc.querySelectorAll('meta[name^="twitter:"]');
+    existingTwitterTags.forEach(tag => tag.remove());
+    
+    // Add new Twitter tags
+    const twitterTags = [
+      { name: 'twitter:card', content: 'summary_large_image' },
+      { name: 'twitter:title', content: config.ogTitle },
+      { name: 'twitter:description', content: config.ogDescription },
+      { name: 'twitter:image', content: this.ogImage },
+      { name: 'twitter:image:alt', content: 'Muhammadali Rahimov – Full-Stack Developer Portfolio' }
+    ];
+
+    twitterTags.forEach(tag => {
+      const meta = this.renderer.createElement('meta');
+      meta.setAttribute('name', tag.name);
+      meta.setAttribute('content', tag.content);
+      this.doc.head.appendChild(meta);
+    });
   }
 
   private updateJsonLd(route: string, lang: string): void {
@@ -309,7 +365,7 @@ export class SeoService {
         '@type': 'ListItem',
         'position': 1,
         'name': this.routeNames['/']?.[lang] || 'Home',
-        'item': this.baseUrl + '/'
+        'item': `${this.baseUrl}/${lang}/`
       }
     ];
 
@@ -319,7 +375,7 @@ export class SeoService {
         '@type': 'ListItem',
         'position': 2,
         'name': name,
-        'item': `${this.baseUrl}${route}`
+        'item': `${this.baseUrl}/${lang}${route}`
       });
     }
 
