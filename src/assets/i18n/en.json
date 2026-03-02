@@ -11,7 +11,8 @@
   "HOME": {
     "greeting": "Hi there, I am",
     "name": "Muhammadali Rahimov!",
-    "description": "Full-stack developer with 1+ years of expertise in Angular, Rest API, Three.js and Java Spring Boot.",
+    "description": "Full-Stack Developer based in Germany – specialized in Angular, React, Java Spring Boot, REST APIs, Three.js and scalable web applications.",
+    "heroSubheading": "Modern Web Development & Web3 Solutions from Germany",
     "hireMe": "Hire Me",
     "latestProjects": "Latest Projects",
     "experience": {
@@ -20,9 +21,83 @@
       "deliveryLabel": "Faster Project Delivery"
     },
     "skills": {
-      "web": "Full-Stack Web Dev't",
+      "web": "Full-Stack Web Dev\u2019t",
       "ai": "AI & Prompt Engineering",
-      "mobile": "Mobile Web-App Dev't"
+      "mobile": "Mobile Web-App Dev\u2019t"
+    },
+    "services": {
+      "title": "My Services",
+      "items": [
+        {
+          "title": "Full-Stack Web Development",
+          "text": "Custom web applications with Angular, React, Java Spring Boot and modern cloud technologies – from concept to launch."
+        },
+        {
+          "title": "Web3 & Blockchain Development",
+          "text": "Decentralized applications, smart contracts and blockchain integration for future-proof digital solutions."
+        },
+        {
+          "title": "API Development & Integration",
+          "text": "Robust REST APIs and seamless third-party integrations for maximum interoperability and scalability."
+        },
+        {
+          "title": "UI/UX Design & Prototyping",
+          "text": "User-centered design focused on conversion, accessibility and outstanding user experiences."
+        }
+      ]
+    },
+    "whyWorkWithMe": {
+      "title": "Why Work With M4LI?",
+      "items": [
+        "Based in Germany – direct communication without barriers",
+        "Trilingual: German, English, Russian",
+        "End-to-end development: Frontend, Backend and Deployment",
+        "Cutting-edge tech stack: Angular, React, Spring Boot, Web3",
+        "Agile workflow with transparent project management",
+        "Long-term maintenance and support after project delivery"
+      ]
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "items": [
+        {
+          "question": "What does a Full-Stack Developer do?",
+          "answer": "A Full-Stack Developer masters both frontend and backend – from user interfaces with Angular or React to server logic with Java Spring Boot and databases. As a Full-Stack Developer in Germany, I deliver your complete web project from a single source."
+        },
+        {
+          "question": "Why hire a Full-Stack Developer from Germany?",
+          "answer": "A developer based in Germany offers direct communication in your timezone, understanding of the European market and GDPR-compliant solutions. I work from Germany and am always personally available."
+        },
+        {
+          "question": "What technologies does M4LI use?",
+          "answer": "My tech stack includes Angular, React, TypeScript, Java Spring Boot, PostgreSQL, REST APIs, Three.js, Tailwind CSS, Firebase and Web3 technologies. I choose the optimal technology for each project."
+        },
+        {
+          "question": "How much does a web application cost?",
+          "answer": "Costs depend on the project scope. A simple website starts at a few hundred euros, complex web applications can cost several thousand. Contact me for a free initial consultation and a personalized quote."
+        },
+        {
+          "question": "How does a web project with M4LI work?",
+          "answer": "Every project starts with a free consultation. Then follows concept, design, development, testing and deployment. I work agile and keep you informed at every stage."
+        },
+        {
+          "question": "What is Web3 Development?",
+          "answer": "Web3 Development covers decentralized applications (dApps), smart contracts and blockchain integration. As a Web3 Developer in Germany, I help businesses leverage the possibilities of decentralized technologies."
+        },
+        {
+          "question": "Does M4LI offer maintenance and support?",
+          "answer": "Yes, I provide long-term maintenance, updates and technical support for all developed projects. This keeps your application secure, performant and up to date."
+        },
+        {
+          "question": "What languages is communication available in?",
+          "answer": "I communicate fluently in German, English and Russian. This ensures smooth collaboration regardless of your preferred language."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Ready for Your Next Project?",
+      "description": "Let\u2019s bring your digital vision to life together. Free initial consultation – no obligation, personal and direct.",
+      "button": "Start Your Project"
     }
   },
   "ABOUT": {

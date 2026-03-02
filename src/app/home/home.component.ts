@@ -1,6 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild } from '@angular/core';
-import { TranslatePipe } from '@ngx-translate/core';
+import { TranslatePipe, TranslateService } from '@ngx-translate/core';
 import { RouterLink } from '@angular/router';
+import { NgForOf, NgIf } from '@angular/common';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import * as THREE from 'three';
@@ -10,7 +11,9 @@ import * as THREE from 'three';
   selector: 'app-home',
   imports: [
     TranslatePipe,
-    RouterLink
+    RouterLink,
+    NgForOf,
+    NgIf
   ],
   templateUrl: './home.component.html',
   standalone: true,
@@ -22,6 +25,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   yearsCount = 0;
   projectsCount = 0;
   deliveryCount = 0;
+  faqItems: Array<{ question: string; answer: string }> = [];
 
   private yearsTarget = 894;
   private projectsTarget = 8;
@@ -32,10 +36,22 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
   private liquidRenderer?: THREE.WebGLRenderer;
   private liquidResizeHandler?: () => void;
 
+  constructor(private translate: TranslateService) {}
+
   ngOnInit(): void {
     this.animateCount('yearsCount', this.yearsTarget, 10);
     this.animateCount('projectsCount', this.projectsTarget, 1800);
     this.animateCount('deliveryCount', this.deliveryTarget, 1800);
+    this.loadFaq();
+    this.translate.onLangChange.subscribe(() => this.loadFaq());
+  }
+
+  private loadFaq(): void {
+    this.translate.get('HOME.faq.items').subscribe((items: any[]) => {
+      if (Array.isArray(items)) {
+        this.faqItems = items;
+      }
+    });
   }
 
   ngAfterViewInit(): void {

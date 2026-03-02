@@ -11,7 +11,8 @@
   "HOME": {
     "greeting": "Hallo, ich bin",
     "name": "Muhammadali Rahimov!",
-    "description": "Full-Stack-Entwickler mit über 1 Jahr Erfahrung in Angular, REST-API, Three.js und Java Spring Boot.",
+    "description": "Full-Stack-Entwickler aus Deutschland – spezialisiert auf Angular, React, Java Spring Boot, REST-APIs, Three.js und skalierbare Webanwendungen.",
+    "heroSubheading": "Moderne Webentwicklung & Web3-Lösungen aus Deutschland",
     "hireMe": "Stellen Sie mich ein",
     "latestProjects": "Neueste Projekte",
     "experience": {
@@ -23,6 +24,80 @@
       "web": "Full-Stack-Webentwicklung",
       "ai": "KI & Prompt Engineering",
       "mobile": "Mobile Web-App-Entwicklung"
+    },
+    "services": {
+      "title": "Meine Leistungen",
+      "items": [
+        {
+          "title": "Full-Stack Webentwicklung",
+          "text": "Maßgeschneiderte Webanwendungen mit Angular, React, Java Spring Boot und modernen Cloud-Technologien – von der Idee bis zum Go-Live."
+        },
+        {
+          "title": "Web3 & Blockchain Entwicklung",
+          "text": "Dezentrale Anwendungen, Smart Contracts und Blockchain-Integration für zukunftssichere digitale Lösungen."
+        },
+        {
+          "title": "API-Entwicklung & Integration",
+          "text": "Robuste REST-APIs und nahtlose Drittanbieter-Integrationen für maximale Interoperabilität und Skalierbarkeit."
+        },
+        {
+          "title": "UI/UX Design & Prototyping",
+          "text": "Benutzerzentriertes Design mit Fokus auf Conversion, Barrierefreiheit und herausragende Nutzererlebnisse."
+        }
+      ]
+    },
+    "whyWorkWithMe": {
+      "title": "Warum mit M4LI arbeiten?",
+      "items": [
+        "Standort Deutschland – direkte Kommunikation ohne Sprachbarrieren",
+        "Dreisprachig: Deutsch, Englisch, Russisch",
+        "End-to-End Entwicklung: Frontend, Backend und Deployment",
+        "Modernster Tech-Stack: Angular, React, Spring Boot, Web3",
+        "Agile Arbeitsweise mit transparenter Projektabwicklung",
+        "Langfristige Wartung und Support nach Projektabschluss"
+      ]
+    },
+    "faq": {
+      "title": "Häufig gestellte Fragen",
+      "items": [
+        {
+          "question": "Was macht ein Full-Stack Entwickler?",
+          "answer": "Ein Full-Stack Entwickler beherrscht sowohl Frontend als auch Backend – von der Benutzeroberfläche mit Angular oder React bis zur Serverlogik mit Java Spring Boot und Datenbanken. Als Full-Stack Entwickler in Deutschland biete ich die komplette Umsetzung Ihres Webprojekts aus einer Hand."
+        },
+        {
+          "question": "Warum einen Full-Stack Entwickler aus Deutschland beauftragen?",
+          "answer": "Ein Entwickler aus Deutschland bietet direkte Kommunikation in Ihrer Zeitzone, Verständnis für den deutschen Markt und DSGVO-konforme Lösungen. Ich arbeite von Deutschland aus und bin jederzeit persönlich erreichbar."
+        },
+        {
+          "question": "Welche Technologien verwendet M4LI?",
+          "answer": "Mein Tech-Stack umfasst Angular, React, TypeScript, Java Spring Boot, PostgreSQL, REST-APIs, Three.js, Tailwind CSS, Firebase und Web3-Technologien. Ich wähle die optimale Technologie für jedes Projekt."
+        },
+        {
+          "question": "Was kostet eine Webanwendung?",
+          "answer": "Die Kosten hängen vom Projektumfang ab. Eine einfache Website beginnt bei wenigen hundert Euro, komplexe Web-Anwendungen können mehrere tausend kosten. Kontaktieren Sie mich für ein kostenloses Erstgespräch und ein individuelles Angebot."
+        },
+        {
+          "question": "Wie läuft ein Webprojekt mit M4LI ab?",
+          "answer": "Jedes Projekt beginnt mit einem kostenlosen Beratungsgespräch. Danach folgen Konzeption, Design, Entwicklung, Testing und Deployment. Ich arbeite agil und halte Sie in jeder Phase auf dem Laufenden."
+        },
+        {
+          "question": "Was ist Web3 Entwicklung?",
+          "answer": "Web3 Entwicklung umfasst dezentrale Anwendungen (dApps), Smart Contracts und Blockchain-Integration. Als Web3 Entwickler in Deutschland helfe ich Unternehmen, die Möglichkeiten dezentraler Technologien zu nutzen."
+        },
+        {
+          "question": "Bietet M4LI auch Wartung und Support an?",
+          "answer": "Ja, ich biete langfristige Wartung, Updates und technischen Support für alle entwickelten Projekte an. Damit bleibt Ihre Anwendung sicher, performant und auf dem neuesten Stand."
+        },
+        {
+          "question": "In welchen Sprachen ist die Kommunikation möglich?",
+          "answer": "Ich kommuniziere fließend auf Deutsch, Englisch und Russisch. Dadurch können wir problemlos zusammenarbeiten, unabhängig von Ihrer bevorzugten Sprache."
+        }
+      ]
+    },
+    "cta": {
+      "title": "Bereit für Ihr nächstes Projekt?",
+      "description": "Lassen Sie uns gemeinsam Ihre digitale Vision verwirklichen. Kostenloses Erstgespräch – unverbindlich und persönlich.",
+      "button": "Projekt starten"
     }
   },
   "ABOUT": {

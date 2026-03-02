@@ -33,8 +33,8 @@ export class NavbarComponent implements OnDestroy {
     this.translate.setDefaultLang('de');
 
     const browserLang = this.translate.getBrowserLang();
-    this.currentLang = this.translate.currentLang || (browserLang?.match(/en|de|ru/) ? browserLang : 'en');
-    this.translate.use(browserLang?.match(/en|de|ru/) ? browserLang : 'en');
+    this.currentLang = this.translate.currentLang || (browserLang?.match(/en|de|ru/) ? browserLang : 'de');
+    this.translate.use(browserLang?.match(/en|de|ru/) ? browserLang : 'de');
   }
 
   ngOnDestroy(): void {

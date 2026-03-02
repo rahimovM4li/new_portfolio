@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /assets/i18n/
+
+Sitemap: https://m4li.de/sitemap.xml
+
+Host: https://m4li.de

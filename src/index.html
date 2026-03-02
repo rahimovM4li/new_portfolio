@@ -1,45 +1,83 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>justAli( ); Muhammadali Rahimov – FullStack Developer</title>
+  <title>M4LI | Muhammadali Rahimov – Full-Stack Entwickler Deutschland</title>
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <!-- Theme Colors for Mobile -->
+
+  <!-- SEO Meta -->
+  <meta name="description" content="Muhammadali Rahimov – Full-Stack Entwickler aus Deutschland. Spezialisiert auf Angular, React, Java Spring Boot, Web3 &amp; skalierbare Webanwendungen. Jetzt Projekt starten!" />
+  <meta name="keywords" content="Full Stack Entwickler Deutschland, Web3 Entwickler Deutschland, Muhammadali Rahimov, M4LI Developer, Full-Stack Developer Germany, Angular Entwickler, React Developer, Java Spring Boot, Webentwickler Deutschland, Freelancer Webentwicklung" />
+  <meta name="author" content="Muhammadali Rahimov" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+  <link rel="canonical" href="https://m4li.de/" />
+
+  <!-- Geo Tags -->
+  <meta name="geo.region" content="DE" />
+  <meta name="geo.placename" content="Germany" />
+  <meta name="geo.position" content="51.1657;10.4515" />
+  <meta name="ICBM" content="51.1657, 10.4515" />
+
+  <!-- Language -->
+  <meta http-equiv="content-language" content="de, en, ru" />
+  <meta name="format-detection" content="telephone=no" />
+
+  <!-- Theme Colors -->
   <meta name="theme-color" content="#071E17" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <meta name="msapplication-navbutton-color" content="#16a34a" />
+  <meta name="msapplication-TileColor" content="#071E17" />
 
-  <!-- SEO Meta -->
-  <meta name="description" content="Portfolio of Muhammadali Rahimov – Full-stack developer specialized in Angular, Java Spring Boot, REST APIs and AI integration." />
-  <meta name="keywords" content="Muhammadali Rahimov, software developer Germany, full-stack engineer, Angular expert, Java Spring Boot developer, AI integration, personal portfolio, frontend backend developer, web application developer" />
-  <meta name="author" content="Muhammadali Rahimov" />
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="de" href="https://m4li.de/" />
+  <link rel="alternate" hreflang="en" href="https://m4li.de/" />
+  <link rel="alternate" hreflang="ru" href="https://m4li.de/" />
+  <link rel="alternate" hreflang="x-default" href="https://m4li.de/" />
 
-  <!-- Open Graph (Facebook, LinkedIn) -->
-  <meta property="og:title" content="Muhammadali Rahimov – FullStack Developer" />
-  <meta property="og:description" content="Hi, I’m Muhammadali – a passionate full-stack developer based in Germany. Explore my projects in Angular, Java Spring Boot, and more." />
-  <meta property="og:image" content="https://m4li.de/assets/myPic.jpg" /> <!-- Replace with your actual image path -->
-  <meta property="og:url" content="https://m4li.de" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="M4LI | Muhammadali Rahimov – Full-Stack Entwickler Deutschland" />
+  <meta property="og:description" content="Full-Stack Entwickler aus Deutschland – Angular, React, Java Spring Boot, Web3. Moderne Webanwendungen &amp; skalierbare Lösungen. Jetzt Projekt starten!" />
+  <meta property="og:image" content="https://m4li.de/assets/myPic.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Muhammadali Rahimov – Full-Stack Developer Portfolio" />
+  <meta property="og:url" content="https://m4li.de/" />
   <meta property="og:type" content="website" />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:locale:alternate" content="en_US" />
+  <meta property="og:locale:alternate" content="ru_RU" />
+  <meta property="og:site_name" content="M4LI – Muhammadali Rahimov" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Muhammadali Rahimov – FullStack Developer" />
-  <meta name="twitter:description" content="Check out my web development portfolio, with focus on Angular, Spring Boot, and modern front-end technologies." />
-  <meta name="twitter:image" content="https://m4li.de/assets/myPic.jpg" /> <!-- Replace with actual image -->
+  <meta name="twitter:title" content="M4LI | Muhammadali Rahimov – Full-Stack Developer Germany" />
+  <meta name="twitter:description" content="Full-Stack Developer based in Germany – Angular, React, Spring Boot, Web3. Modern web applications &amp; scalable solutions." />
+  <meta name="twitter:image" content="https://m4li.de/assets/myPic.jpg" />
+  <meta name="twitter:image:alt" content="Muhammadali Rahimov – Full-Stack Developer Portfolio" />
 
+  <!-- Preconnect & DNS Prefetch -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+  <link rel="dns-prefetch" href="https://formspree.io" />
+  <link rel="dns-prefetch" href="https://unpkg.com" />
+
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" href="assets/AliIcon.png" />
-  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+  <link rel="icon" type="image/png" href="assets/AliIcon.png" />
+  <link rel="apple-touch-icon" href="assets/AliIcon.png" />
+
+  <!-- Icons CSS (non-render-blocking) -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"></noscript>
 </head>
 <body>
   <app-root></app-root>
-  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js" defer></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js" defer></script>
 </body>
 </html>
